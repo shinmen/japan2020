@@ -34,7 +34,7 @@ abstract class AggregateRoot
 
     private function applyChange(Event $event, bool $isNew)
     {
-        $this->loadEvent($event);
+        $this->apply($event);
         if ($isNew) {
             $this->changes->append($event);
         }
@@ -48,7 +48,7 @@ abstract class AggregateRoot
         }
         $refClassEvent = new ReflectionClass($args[0]);
 
-        $methodToCall = 'load'.$refClassEvent->getShortName();
+        $methodToCall = $method.$refClassEvent->getShortName();
         if (!method_exists($this, $methodToCall)) {
             throw new Exception();
         }
