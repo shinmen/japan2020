@@ -2,7 +2,9 @@
 
 namespace App\Domain;
 
-final class EventCollection implements IteratorAggregate 
+use App\Domain\Event;
+
+final class EventCollection implements \IteratorAggregate 
 {
     private $events;
         
@@ -18,7 +20,7 @@ final class EventCollection implements IteratorAggregate
 
     public function getIterator()
     {
-        return new ArrayIterator($this->events);
+        return new \ArrayIterator($this->events);
     }
 }
 

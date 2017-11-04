@@ -2,11 +2,15 @@
 
 namespace App\Domain;
 
-final class Repository implements RepositoryInterface
-{
-    private EventStore $eventStore;
+use App\Domain\AggregateRoot;
+use App\Domain\EventStore;
+use App\Domain\RepositoryInterface;
 
-    public function __construct(EventStore $eventStore) :void
+class Repository implements RepositoryInterface
+{
+    private $eventStore;
+
+    public function __construct(EventStore $eventStore)
     {
         $this->eventStore = $eventStore;
     }
@@ -18,7 +22,7 @@ final class Repository implements RepositoryInterface
 
     public function getById($guid, string $aggregateClass)
     {
-        $refClassAggr = ReflectionClass($aggregateClass);      
+        $refClassAggr = new \ReflectionClass($aggregateClass);      
         $aggregate = $refClassAggr->newInstance();
         $history = $this->eventStore->getAggregateHistory($guid);
         $aggregate->replayHistory($history);

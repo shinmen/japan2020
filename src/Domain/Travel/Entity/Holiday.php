@@ -2,6 +2,8 @@
 
 namespace App\Domain\Travel\Entity;
 
+use App\Domain\AggregateRoot;
+
 class Holiday extends AggregateRoot
 {
     private $startedAt;

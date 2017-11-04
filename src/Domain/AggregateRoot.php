@@ -2,13 +2,16 @@
 
 namespace App\Domain;
 
+use App\Domain\Event;
+use App\Domain\EventCollection;
+
 abstract class AggregateRoot 
 {
     protected $guid;
 
     protected $version;
 
-    protected $changes = new ArrayObject();
+    protected $changes;
 
     public function getUnCommitedChanges()
     {
@@ -17,10 +20,10 @@ abstract class AggregateRoot
 
     public function markChangesAsCommited()
     {
-        $this->changes = new ArrayObject();
+        $this->changes = new \ArrayObject();
     }
 
-    public function replayHistory(EventCollection history)
+    public function replayHistory(EventCollection $history)
     {
         foreach ($history as $event) {
             $this->applyChange($event, false);       
@@ -40,7 +43,7 @@ abstract class AggregateRoot
         }
     }
     
-    protected function __call($method, $args)
+    public function __call($method, $args)
     {
         $event = $args[0];
         if (!$event instanceOf Event) {
