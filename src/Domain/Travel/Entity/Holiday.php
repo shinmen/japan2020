@@ -4,7 +4,7 @@ namespace App\Domain\Travel\Entity;
 
 use App\Domain\AggregateRoot;
 
-class Holiday extends AggregateRoot
+final class Holiday extends AggregateRoot
 {
     private $startedAt;
 
@@ -13,6 +13,9 @@ class Holiday extends AggregateRoot
     private $daySchedules;
 
     private $railPassPackage;
+
+
+    private function __construct(){}
 
 
     protected function loadOne(EventOne $event)
