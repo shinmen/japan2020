@@ -15,6 +15,7 @@ class EventStoreStreamWriterTest extends TestCase
                     'ES-EventType' => 'type_test',
                     'ES-EventId' => 'C322E299-CB73-4B47-97C5-5054F920746E',
                 ],
+                'auth' => ['admin', 'changeit'],
                 'json' => [
                     'test' => 'test',
                 ]
