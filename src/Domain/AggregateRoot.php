@@ -37,7 +37,7 @@ abstract class AggregateRoot
 
     private function applyChange(Event $event, bool $isNew)
     {
-        $this->apply($event);
+        $this->load($event);
         if ($isNew) {
             $this->changes->append($event);
         }

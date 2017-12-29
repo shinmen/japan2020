@@ -4,7 +4,7 @@ namespace App\Domain\Travel\Entity;
 
 final class Day
 {
-    private $stay;
+    private $overnight;
 
     private $visits;
 
@@ -12,7 +12,6 @@ final class Day
     {
         $this->visits = new VisitCollection();
     }
-
 
     public function bookAccomodation(Overnight $overnight) :void
     {

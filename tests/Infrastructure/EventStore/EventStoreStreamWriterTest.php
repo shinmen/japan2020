@@ -13,7 +13,7 @@ class EventStoreStreamWriterTest extends TestCase
         $response = $client->request('POST', '/streams/$stream_test', [
                 'headers' => [
                     'ES-EventType' => 'type_test',
-                    'ES-EventId' => 'C322E299-CB73-4B47-97C5-5054F920746E',
+                    'ES-EventId' => 'C322E299-CB73-4B47-97C5-5054F920746A',
                 ],
                 'auth' => ['admin', 'changeit'],
                 'json' => [
