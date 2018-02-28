@@ -45,11 +45,11 @@ class EventStoreStreamReaderTest extends TestCase
                     //var_dump("$value");
                     $resource = $reader->download($value->getUrl(), '', '', 'admin', 'changeit');
                     //var_dump($resource);
-                    var_dump($resource->getContent());
+                    var_dump(json_decode($resource->getContent(), true));
                 }
                 //var_dump($feed->getItems());
          } catch (PicoFeedException $e) {
-             var_dump($e->getMessage());
+             //var_dump($e->getMessage());
               // Do Something...
          }
     }

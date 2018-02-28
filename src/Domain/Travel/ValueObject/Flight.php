@@ -14,20 +14,20 @@ final class Flight
 
     private $departureDate;
 
-    private $rate;
+    private $departureCity;
+
+    private $arrivalCity;
 
     public function __construct(
         int $flightNumber,
         string $company,
         DateTime $arrivalDate,
-        Datetime $departureDate,
-        float $rate
+        Datetime $departureDate
     ) {
         $this->flightNumber = $flightNumber;
         $this->company = $company;
         $this->arrivalDate = $arrivalDate;
         $this->departureDate = $departureDate;
-        $this->rate = $rate;
     }
 
     public function getFlightNumber()
@@ -52,11 +52,16 @@ final class Flight
 
     public function getDuration(): float
     {
-        return ;
+        return $this->departureDate->diff($arrivalDate);
     }
 
-    public function getRate(): float
+    public function getDepartueCity(): string
     {
-        return $this->rate;
+
+    }
+
+    public function getArrivalCity(): string
+    {
+        
     }
 }

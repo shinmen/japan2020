@@ -15,12 +15,19 @@ final class Holiday extends AggregateRoot
 
     private $railPassPackage;
 
-    private $flightPlan;
+    private $flightPlanDeparture;
+
+    private $flightPlaceArrival;
 
 
     private function __construct(){}
 
-    public function bookFlight(Flight $flight)
+    public function selectFlightDeparture(Flight $flight)
+    {
+        $this->applyEvent(new FlightPlanSelected($this->guid, $flight));
+    }
+
+    public function selectFlightDeparture(Flight $flight)
     {
         $this->applyEvent(new FlightPlanSelected($this->guid, $flight));
     }
@@ -33,14 +40,4 @@ final class Holiday extends AggregateRoot
             $event->getCompanyName()//to continue
         );
     }
-
-    // protected function loadOne(EventOne $event)
-    // {
-           
-    // }
-
-    // protected function loadTwo(EventTwo $event)
-    // {
-
-    // }
 }

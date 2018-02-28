@@ -11,7 +11,7 @@ final class FlightPlan
 
     private $departureDate;
 
-    private $rate;
+    private $roundTripRate;
 
     public function __construct(Flight $flight)
     {

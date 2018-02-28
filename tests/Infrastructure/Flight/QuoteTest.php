@@ -14,7 +14,7 @@ class QuoteTest extends TestCase
         try {
             $response = $client->request('POST', '/air/api/search/searchflightavailability', 
                 [
-                    'auth' => ['julotrash@gmail.com', '165685B3 '],
+                    'auth' => ['julotrash@gmail.com', 'juFFF83C64'],
                     //'headers' => ['Accept-Encoding' => 'application/gzip'],
                     'json' => [
                         'ResponseVersion' => 'VERSION41',
@@ -26,13 +26,13 @@ class QuoteTest extends TestCase
                                 [
                                     'Origin' => 'NYC',
                                     'Destination' => 'LON',
-                                    'DepartureDate' => '2018-02-02',
+                                    'DepartureDate' => '2018-05-02',
                                     'DepartureTime' => '1200',
                                 ],
                                 [
                                     'Origin' => 'LON',
                                     'Destination' => 'NYC',
-                                    'DepartureDate' => '2018-02-05',
+                                    'DepartureDate' => '2018-05-05',
                                     'DepartureTime' => '1200',
                                 ]
                             ],

@@ -6,3 +6,8 @@
 #controllers:
 #    resource: ../src/Controller/
 #    type: annotation
+
+write_batch_stream:    
+    path: /
+    defaults: { _controller: 'App\Application\NewBatchEventController' }
+    methods: ['POST']
