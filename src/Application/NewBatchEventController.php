@@ -4,6 +4,7 @@ namespace App\Application;
 
 use App\Infrastructure\EventStore\EventStoreWriteStream;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 final class NewBatchEventController
 {
@@ -16,7 +17,7 @@ final class NewBatchEventController
 
     public function __invoke(Request $request)
     {
-        $response = $this->writer->writeBatchEvent(json_decode($request->request->all(), true));
+        $response = $this->writer->writeBatchEvent(json_decode($request->getContent(), true));
 
         return new Response('', $response->getStatusCode());
     }
