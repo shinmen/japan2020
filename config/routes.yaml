@@ -8,6 +8,6 @@
 #    type: annotation
 
 write_batch_stream:    
-    path: /
+    path: /events/{streamId}
     defaults: { _controller: 'App\Application\NewBatchEventController' }
     methods: ['POST']

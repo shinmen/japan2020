@@ -33,6 +33,6 @@ services:
 
     App\Infrastructure\EventStore\EventStoreWriteStream:
         arguments:
-            $esLogin: '%env(EVENT_STORE_LOGIN)'
-            $esPassword: '%env(EVENT_STORE_PASSWORD)'
+            $esLogin: '%env(EVENT_STORE_LOGIN)%'
+            $esPassword: '%env(EVENT_STORE_PASSWORD)%'
 

@@ -13,6 +13,8 @@ final class EventStoreWriteStream
     public function __construct(ClientInterface $httpClient, string $esLogin, string $esPassword)
     {
         $this->httpClient = $httpClient;
+	$this->esLogin = $esLogin;
+	$this->esPassword = $esPassword;
     }
 
     public function writeBatchEvent(array $events)
