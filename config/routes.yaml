@@ -11,3 +11,8 @@ write_batch_stream:
     path: /events/{streamId}
     defaults: { _controller: 'App\Application\NewBatchEventController' }
     methods: ['POST']
+
+read_batch_stream:    
+    path: /events/{streamId}
+    defaults: { _controller: 'App\Application\HistoryEventController' }
+    methods: ['GET']
