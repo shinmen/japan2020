@@ -7,8 +7,10 @@ use GuzzleHttp\ClientInterface;
 final class EventStoreWriteStream
 {
     private $httpClient;
+    private $esLogin;
+    private $esPassword;
 
-    public function __construct(ClientInterface $httpClient)
+    public function __construct(ClientInterface $httpClient, string $esLogin, string $esPassword)
     {
         $this->httpClient = $httpClient;
     }
@@ -21,7 +23,7 @@ final class EventStoreWriteStream
                     // 'ES-EventId' => 'C322E299-CB73-4B47-97C5-5054F920746A',
                     'Content-Type' => 'application/vnd.eventstore.events+json',
                 ],
-                'auth' => ['admin', 'changeit'],
+                'auth' => [$this->esLogin, $this->esPassword],
                 'json' => $events
             ]
         );

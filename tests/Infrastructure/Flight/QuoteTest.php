@@ -2,19 +2,25 @@
 
 namespace App\Tests\Infrastructure\Flight;
 
-use PHPUnit\Framework\TestCase;
 use GuzzleHttp\Client;
+use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
-class QuoteTest extends TestCase
+class QuoteTest extends KernelTestCase
 {
+    public function setUp()
+    {
+        static::bootKernel();
+    }
+
     public function testQuoteSchema()
     {
+        $container = static::$kernel->getContainer();
         $client = new Client(['base_uri' => 'https://api-dev.fareportallabs.com']);
 
         try {
             $response = $client->request('POST', '/air/api/search/searchflightavailability', 
                 [
-                    'auth' => ['julotrash@gmail.com', 'juFFF83C64'],
+                    'auth' => ['login', 'password'],
                     //'headers' => ['Accept-Encoding' => 'application/gzip'],
                     'json' => [
                         'ResponseVersion' => 'VERSION41',

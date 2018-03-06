@@ -15,7 +15,7 @@ final class NewBatchEventController
         $this->writer = $writer;
     }
 
-    public function __invoke(Request $request)
+    public function __invoke(string $streamId, Request $request)
     {
         $response = $this->writer->writeBatchEvent(json_decode($request->getContent(), true));
 

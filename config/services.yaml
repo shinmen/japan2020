@@ -30,3 +30,9 @@ services:
     GuzzleHttp\Client:
         - {'base_uri': 'http://127.0.0.1:2113'}
     GuzzleHttp\ClientInterface: '@GuzzleHttp\Client'
+
+    App\Infrastructure\EventStore\EventStoreWriteStream:
+        arguments:
+            $esLogin: '%env(EVENT_STORE_LOGIN)'
+            $esPassword: '%env(EVENT_STORE_PASSWORD)'
+
