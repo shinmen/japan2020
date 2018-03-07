@@ -9,10 +9,27 @@ services:
         environment:
             - EVENTSTORE_RUN_PROJECTIONS=All
 
-    redis:
-        image: "redis:3.2.11-alpine"
+    rabbitmq:
+        image: "rabbitmq:3.7.4-rc.4-management-alpine"
+        hostname: "rabbit_japan"
+        environment:
+            RABBITMQ_NODENAME: "rabbitmq_japan"
+            RABBITMQ_ERLANG_COOKIE: "SWQOKODSQALRPCLNMEQG"
+            RABBITMQ_DEFAULT_USER: "${RABBIT_USERNAME}"
+            RABBITMQ_DEFAULT_PASS: "${RABBIT_PASSWORD}"
+            RABBITMQ_DEFAULT_VHOST: "/"
         ports:
-            - "6379:6379"
+            - "15680:15672"
+            - "5672:5672"
 
-    
+    mongo:
+        image: "mongo:3"
+        ports:
+            - "27018:27017"
+        environment:
+            - MONGO_INITDB_ROOT_USERNAME=${MONGO_ROOT_USERNAME}
+            - MONGO_INITDB_ROOT_PASSWORD=${MONGO_ROOT_PASSWORD}
+        volumes:
+            - "./mongo/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d"
+            - "/data/db/:/data/db/"   
           

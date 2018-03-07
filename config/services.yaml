@@ -41,8 +41,6 @@ services:
 
     App\Infrastructure\EventStore\EventStoreReadStream:
         arguments:
-            # $streamReader: '@PicoFeed\Reader\Reader\Reader'
-            # $readerConfig: '@PicoFeed\Config\Config'
             $esLogin: '%env(EVENT_STORE_LOGIN)%'
             $esPassword: '%env(EVENT_STORE_PASSWORD)%'
             $esUri: '%env(EVENT_STORE_URI)%'
