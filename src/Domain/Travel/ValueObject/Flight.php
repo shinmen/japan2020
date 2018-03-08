@@ -1,43 +1,39 @@
 <?php
 
-namespace Domain\Travel\ValueObject;
+namespace App\Domain\Travel\ValueObject;
 
 use Datetime;
+use Infrastructure\Flight\Airport;
 
 final class Flight
 {
     private $flightNumber;
 
-    private $company;
-
-    private $arrivalDate;
+    private $departureAirport;
 
     private $departureDate;
 
-    private $departureCity;
+    private $arrivalAirport;
 
-    private $arrivalCity;
+    private $arrivalDate;
 
     public function __construct(
         int $flightNumber,
-        string $company,
-        DateTime $arrivalDate,
-        Datetime $departureDate
+        DateTime $departureDate,
+        Datetime $arrivalDate,
+        string $departureAirport,
+        string $arrivalAirport
     ) {
         $this->flightNumber = $flightNumber;
-        $this->company = $company;
         $this->arrivalDate = $arrivalDate;
         $this->departureDate = $departureDate;
+        $this->departureAirport = $departureAirport;
+        $this->arrivalAirport = $arrivalAirport;
     }
 
     public function getFlightNumber()
     {
         return $this->flightNumber;
-    }
-
-    public function getCompanyName()
-    {
-        return $this->company;
     }
 
     public function getArrivalDate(): DateTime
@@ -55,13 +51,13 @@ final class Flight
         return $this->departureDate->diff($arrivalDate);
     }
 
-    public function getDepartueCity(): string
+    public function getDepartueAirport(): string
     {
-
+        return $this->departureAirport;
     }
 
-    public function getArrivalCity(): string
+    public function getArrivalAirport(): string
     {
-        
+        return $this->arrivalAirport;
     }
 }
