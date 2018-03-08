@@ -31,5 +31,5 @@ services:
             - MONGO_INITDB_ROOT_PASSWORD=${MONGO_ROOT_PASSWORD}
         volumes:
             - "./mongo/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d"
-            - "/data/db/:/data/db/"   
+            - "/data/japan_db/:/data/japan_db/"   
           
