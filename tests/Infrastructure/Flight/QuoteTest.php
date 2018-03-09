@@ -3,6 +3,7 @@
 namespace App\Tests\Infrastructure\Flight;
 
 use App\Domain\Travel\ValueObject\Flight;
+use App\Infrastructure\Flight\FlightRequest;
 use App\Infrastructure\Flight\TripInfo;
 use GuzzleHttp\Client;
 use Symfony\Bundle\FrameworkBundle\Tests\TestCase;
@@ -20,34 +21,64 @@ class QuoteTest extends TestCase
         $currency = $search['Currency']['CurrencyCode'];
         $outboundOptions = [];
         foreach ($search['OriginDestinationOptions']['OutBoundOptions']['OutBoundOption'] as $option) {
-            $firstFlight = $option['FlightSegment'][0];
-            $companyName = $firstFlight['MarketingAirline']['Code'];
-            $duration = $firstFlight['FlightDuration'];
-            $flights = [];
-            foreach ($option['FlightSegment'] as $flight) {
-                $flights[] = new Flight(
-                    $flight['FlightNumber'], 
-                    $this->extractTime($flight['DepartureDateTime']),
-                    $this->extractTime($flight['ArrivalDateTime']),
-                    $flight['DepartureAirport']['LocationCode'],
-                    $flight['ArrivalAirport']['LocationCode']
-                );
-            }
-            $trip = new TripInfo($duration, $companyName, $flights);
-            $outboundOptions[$option['Segmentid']] = $trip;
+            $outboundOptions = $this->getFlightOption($option, $outboundOptions);
         }
 
-        var_dump($outboundOptions);
+        $inboundOptions = [];
+        foreach ($search['OriginDestinationOptions']['InBoundOptions']['InBoundOption'] as $option) {
+            $inboundOptions = $this->getFlightOption($option, $inboundOptions);
+        }
+
+        $i = 0;
+        $flightRequests = [];
+        $refs = $search['SegmentReference']['RefDetails'];
+        while ($i <= 30) {
+            $outBoundId = $refs[$i]['OutBoundOptionId'][0];
+            $goingFlightInfo = $outboundOptions[$outBoundId];
+            $inBoundId = $refs[$i]['InBoundOptionId'][0];
+            $returnFlightInfo = $inboundOptions[$inBoundId];
+
+            $totalPerAdultFare = $refs[$i]['PTC_FareBreakdown']['Adult']['TotalAdultFare'];
+            $flightRequest = new FlightRequest($goingFlightInfo, $returnFlightInfo, $totalPerAdultFare);
+            $flightRequests[] = $flightRequest;
+            $i++;
+        }
+
+        //var_dump($flightRequests);
+
+        //var_dump(array_key_exists('ET673H10ET704H10ET', $inboundOptions));
     }
 
     private function extractTime(string $date)
     {
         preg_match('/(\d+)(\D+)(\d+)T(.+)/', $date, $parts);
         unset($parts[0]);
+        
         return new Datetime(sprintf(
                 '%d %s %d %s', ...$parts
             )
         );
-     }
+    }
+
+    private function getFlightOption(array $option, array $flightInfos)
+    {
+        $firstFlight = $option['FlightSegment'][0];
+        $companyName = $firstFlight['MarketingAirline']['Code'];
+        $duration = $firstFlight['FlightDuration'];
+        $flights = [];
+        foreach ($option['FlightSegment'] as $flight) {
+            $flights[] = new Flight(
+                $flight['FlightNumber'], 
+                $this->extractTime($flight['DepartureDateTime']),
+                $this->extractTime($flight['ArrivalDateTime']),
+                $flight['DepartureAirport']['LocationCode'],
+                $flight['ArrivalAirport']['LocationCode']
+            );
+        }
+        $trip = new TripInfo($duration, $companyName, $flights);
+        $flightInfos[$option['Segmentid']] = $trip;
+
+        return $flightInfos;
+    }
 }
 
