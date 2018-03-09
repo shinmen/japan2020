@@ -45,7 +45,7 @@ class EventDescription implements \JsonSerializable
     {
         return [
             'eventId' => $this->eventId,
-            'eventType' => $eventType,
+            'eventType' => $this->eventType,
             'data' => $this->data,
         ];
     }
