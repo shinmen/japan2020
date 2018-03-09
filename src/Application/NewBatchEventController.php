@@ -2,6 +2,7 @@
 
 namespace App\Application;
 
+use App\Infrastructure\EventStore\EventDescriptionDataTransformer;
 use App\Infrastructure\EventStore\EventStoreWriteStream;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -10,14 +11,22 @@ final class NewBatchEventController
 {
     private $writer;
 
-    public function __construct(EventStoreWriteStream $writer)
+    private $transformer;
+
+    public function __construct(EventStoreWriteStream $writer, EventDescriptionDataTransformer $transformer)
     {
         $this->writer = $writer;
+        $this->transformer = $transformer;
     }
 
     public function __invoke(string $streamId, Request $request)
     {
-        $response = $this->writer->writeBatchEvent(json_decode($request->getContent(), true));
+        $events = [];
+        $content = json_decode($request->getContent(), true);
+        foreach ($content as $event) {
+            $events[] = $this->transformer->arrayToEventDescription($event);
+        }
+        $response = $this->writer->writeBatchEvent($events);
 
         return new Response('', $response->getStatusCode());
     }

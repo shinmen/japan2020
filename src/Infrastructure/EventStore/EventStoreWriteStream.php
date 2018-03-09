@@ -2,9 +2,11 @@
 
 namespace App\Infrastructure\EventStore;
 
+use App\Domain\Travel\EventStore\EventStoreWriteInterface;
 use GuzzleHttp\ClientInterface;
+use Psr\Http\Message\ResponseInterface;
 
-final class EventStoreWriteStream
+final class EventStoreWriteStream implements EventStoreWriteInterface
 {
     private $httpClient;
     private $esLogin;
@@ -17,7 +19,10 @@ final class EventStoreWriteStream
 	    $this->esPassword = $esPassword;
     }
 
-    public function writeBatchEvent(array $events)
+    /**
+     * @param array[EventDescription]
+     */
+    public function writeBatchEvent(array $events): ResponseInterface
     {
         $response = $this->httpClient->request('POST', '/streams/$stream_test', [
                 'headers' => [

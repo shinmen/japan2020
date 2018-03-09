@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Infrastructure\Flight;
+namespace App\Domain\Travel\DTO;
 
 final class TripInfo
 {
@@ -29,7 +29,7 @@ final class TripInfo
     /**
      * @return float
      */
-    public function getDuration()
+    public function getDuration(): float
     {
         return $this->duration;
     }
@@ -37,7 +37,7 @@ final class TripInfo
     /**
      * @return string
      */
-    public function getCompanyName()
+    public function getCompanyName(): string
     {
         return $this->companyName;
     }
@@ -45,7 +45,7 @@ final class TripInfo
     /**
      * @return array
      */
-    public function getFlights()
+    public function getFlights(): array
     {
         return $this->flights;
     }

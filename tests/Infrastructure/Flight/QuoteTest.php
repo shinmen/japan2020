@@ -2,9 +2,9 @@
 
 namespace App\Tests\Infrastructure\Flight;
 
-use App\Domain\Travel\ValueObject\Flight;
-use App\Infrastructure\Flight\FlightRequest;
-use App\Infrastructure\Flight\TripInfo;
+use App\Domain\Travel\DTO\Flight;
+use App\Domain\Travel\DTO\FlightRequest;
+use App\Domain\Travel\DTO\TripInfo;
 use GuzzleHttp\Client;
 use Symfony\Bundle\FrameworkBundle\Tests\TestCase;
 use \Datetime;
@@ -53,7 +53,7 @@ class QuoteTest extends TestCase
     {
         preg_match('/(\d+)(\D+)(\d+)T(.+)/', $date, $parts);
         unset($parts[0]);
-        
+
         return new Datetime(sprintf(
                 '%d %s %d %s', ...$parts
             )
@@ -70,8 +70,8 @@ class QuoteTest extends TestCase
             $flights[] = new Flight(
                 $flight['FlightNumber'], 
                 $this->extractTime($flight['DepartureDateTime']),
-                $this->extractTime($flight['ArrivalDateTime']),
                 $flight['DepartureAirport']['LocationCode'],
+                $this->extractTime($flight['ArrivalDateTime']),
                 $flight['ArrivalAirport']['LocationCode']
             );
         }

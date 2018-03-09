@@ -2,18 +2,21 @@
 
 namespace App\Infrastructure\EventStore;
 
+use App\Domain\Travel\EventDescription;
+use App\Domain\Travel\EventStore\EventStoreReadInterface;
 use PicoFeed\Config\Config;
 use PicoFeed\Parser\Feed;
 use PicoFeed\PicoFeedException;
 use PicoFeed\Reader\Reader;
 
-final class EventStoreReadStream
+final class EventStoreReadStream implements EventStoreReadInterface
 {
     const STREAM_ACCEPT_HEADER = 'application/xml';
     const FEED_ACCEPT_HEADER = 'application/vnd.eventstore.atom+json';
 
     private $streamReader;
     private $readerConfig;
+    private $dataTransformer;
     private $esLogin;
     private $esPassword;
     private $esUri;
@@ -21,24 +24,35 @@ final class EventStoreReadStream
     public function __construct(
         Reader $streamReader,
         Config $readerConfig,
+        EventDescriptionDataTransformer $dataTransformer,
         string $esLogin,
         string $esPassword,
         string $esUri
     ) {
         $this->streamReader = $streamReader;
         $this->readerConfig = $readerConfig;
+        $this->dataTransformer = $dataTransformer;
         $this->esLogin = $esLogin;
         $this->esPassword = $esPassword;
         $this->esUri = $esUri;
     }
 
-    public function getEvents(string $streamId)
+    /**
+     * @return array[EventDescription]
+     */
+    public function getEvents(string $streamId): array
     {
         try {
             $feed = $this->getFeed($streamId);
-            return $this->getContent($feed);
+            $content = $this->getContent($feed);
+            $events = [];
+            foreach ($content as $event) {
+                $events[] = $this->contentToEvent($event);
+            }
+
+            return $events;
         } catch(PicoFeedException $e) {
-            throw new \InvalidArgumentException();
+            throw new \InvalidArgumentException('error when retrieving stream');
         }
     }
 
@@ -70,5 +84,15 @@ final class EventStoreReadStream
         }
 
         return $content;
+    }
+
+    private function contentToEvent(array $content): EventDescription
+    {
+        $eventNumber = $content['content']['eventNumber'];
+        $eventId = $content['content']['eventId'];
+        $eventType = $content['content']['eventType'];
+        $data = $content['content']['data'];
+
+        return new EventDescription($eventId, $eventType, $data);
     }
 }

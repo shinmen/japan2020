@@ -1,27 +1,41 @@
 <?php
 
-namespace App\Domain\Travel\ValueObject;
+namespace App\Domain\Travel\DTO;
 
 use Datetime;
-use Infrastructure\Flight\Airport;
 
 final class Flight
 {
+    /**
+     * @var int
+     */
     private $flightNumber;
 
+    /**
+     * @var string
+     */
     private $departureAirport;
 
+    /**
+     * @var Datetime
+     */
     private $departureDate;
 
+    /**
+     * @var string
+     */
     private $arrivalAirport;
 
+    /**
+     * @var Datetime
+     */
     private $arrivalDate;
 
     public function __construct(
         int $flightNumber,
         DateTime $departureDate,
-        Datetime $arrivalDate,
         string $departureAirport,
+        Datetime $arrivalDate,
         string $arrivalAirport
     ) {
         $this->flightNumber = $flightNumber;
@@ -31,7 +45,7 @@ final class Flight
         $this->arrivalAirport = $arrivalAirport;
     }
 
-    public function getFlightNumber()
+    public function getFlightNumber(): int
     {
         return $this->flightNumber;
     }
