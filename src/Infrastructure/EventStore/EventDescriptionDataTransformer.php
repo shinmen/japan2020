@@ -8,10 +8,10 @@ final class EventDescriptionDataTransformer
 {
     public function arrayToEventDescription(array $event): EventDescription
     {
-        $eventNumber = $event['content']['eventNumber'];
-        $eventId = $event['content']['eventId'];
-        $eventType = $event['content']['eventType'];
-        $data = $event['content']['data'];
+        //$eventNumber = $event['eventI']['eventNumber'];
+        $eventId = $event['eventId'];
+        $eventType = $event['eventType'];
+        $data = $event['data'];
 
         return new EventDescription($eventId, $eventType, $data);
     }
