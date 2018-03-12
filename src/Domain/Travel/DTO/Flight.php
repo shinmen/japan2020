@@ -4,7 +4,7 @@ namespace App\Domain\Travel\DTO;
 
 use Datetime;
 
-final class Flight
+final class Flight implements \JsonSerializable
 {
     /**
      * @var int
@@ -73,5 +73,16 @@ final class Flight
     public function getArrivalAirport(): string
     {
         return $this->arrivalAirport;
+    }
+
+    public function jsonSerialize()
+    {
+        return [
+            'flightNumber' => $this->flightNumber,
+            'arrivalDate' => $this->arrivalDate->format('Y-m-d H:i'),
+            'arrivalAirport' => $this->arrivalAirport,
+            'departureDate' => $this->departureDate->format('Y-m-d H:i'),
+            'departureAirport' => $this->departureAirport,
+        ];
     }
 }

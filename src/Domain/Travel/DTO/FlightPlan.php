@@ -4,7 +4,7 @@ namespace App\Domain\Travel\DTO;
 
 use App\Domain\Travel\DTO\TripInfo;
 
-class FlightPlan
+class FlightPlan implements \JsonSerializable
 {
     /**
      * @var TripInfo
@@ -41,5 +41,14 @@ class FlightPlan
     public function getTotalRatePerAdulte(): float
     {
         return $this->totalRatePerAdulte;
+    }
+
+    public function jsonSerialize()
+    {
+        return [
+            'goingFlight' => $this->goingFlightInfo,
+            'returnFlightInfo' => $this->returnFlightInfo,
+            'totalRatePerAdulte' => $this->totalRatePerAdulte,
+        ];
     }
 }

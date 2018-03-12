@@ -2,7 +2,7 @@
 
 namespace App\Domain\Travel\DTO;
 
-final class TripInfo
+final class TripInfo implements \JsonSerializable
 {
     /**
      * @var float
@@ -48,5 +48,14 @@ final class TripInfo
     public function getFlights(): array
     {
         return $this->flights;
+    }
+
+    public function jsonSerialize()
+    {
+        return [
+            'duration' => $this->duration,
+            'companyName' => $this->companyName,
+            'flights' => $this->flights,
+        ];
     }
 }
