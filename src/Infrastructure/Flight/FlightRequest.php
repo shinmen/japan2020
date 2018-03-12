@@ -25,16 +25,16 @@ final class FlightRequest
                 'ClassOfService' => 'ECONOMY',
                 'SegmentDetails' => [
                     [
-                        'Origin' => $goingTrip->getOriginAirportCode(),
-                        'Destination' => $goingTrip->getArrivalAirportCode(),
-                        'DepartureDate' => $goingTrip->getDepartureDatetime()->format('Y-m-d'),
-                        'DepartureTime' => $goingTrip->getDepartureDatetime()->format('Hi'),
+                        'Origin' => $this->goingTrip->getOriginAirportCode(),
+                        'Destination' => $this->goingTrip->getArrivalAirportCode(),
+                        'DepartureDate' => $this->goingTrip->getDepartureDatetime()->format('Y-m-d'),
+                        'DepartureTime' => $this->goingTrip->getDepartureDatetime()->format('Hi'),
                     ],
                     [
-                        'Origin' => $returnTrip->getOriginAirportCode(),
-                        'Destination' => $returnTrip->getArrivalAirportCode(),
-                        'DepartureDate' => $returnTrip->getDepartureDatetime()->format('Y-m-d'),
-                        'DepartureTime' => $returnTrip->getDepartureDatetime()->format('Hi'),
+                        'Origin' => $this->returnTrip->getOriginAirportCode(),
+                        'Destination' => $this->returnTrip->getArrivalAirportCode(),
+                        'DepartureDate' => $this->returnTrip->getDepartureDatetime()->format('Y-m-d'),
+                        'DepartureTime' => $this->returnTrip->getDepartureDatetime()->format('Hi'),
                     ]
                 ],
                 'SearchAlternateDates' => false,
