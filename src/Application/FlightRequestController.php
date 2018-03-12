@@ -7,6 +7,7 @@ use App\Infrastructure\Flight\FlightRequest;
 use App\Infrastructure\Flight\TripRequest;
 use Datetime;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Request;
 
 class FlightRequestController
 {
@@ -17,16 +18,20 @@ class FlightRequestController
         $this->flightOffers = $flightOffers;
     }
 
-    public function __invoke (
-        string $originAirportCode,
-        string $destinationAirportCode,
-        string $departureDate,
-        string $returnDate
-    ) {
-        $goingTrip = new TripRequest($originAirportCode, $destinationAirportCode, new Datetime($departureDate));
-        $returnTrip = new TripRequest($destinationAirportCode, $originAirportCode, new Datetime($returnDate));
+    public function __invoke (Request $request) 
+    {
+        $flightRequestParamsflightRequestParams = json_decode($request->getContent(), true);
+        $goingTrip = new TripRequest(
+            $flightRequestParams['originAirportCode'],
+            $flightRequestParams['destinationAirportCode'],
+            new Datetime($flightRequestParams['departureDate'])
+        );
+        $returnTrip = new TripRequest(
+            $flightRequestParams['destinationAirportCode'],
+            $flightRequestParams['originAirportCode'],
+            new Datetime($flightRequestParams['returnDate'])
+        );
         $flightRequest = new FlightRequest($goingTrip, $returnTrip);
-
         $flightPlans = $this->flightOffers->getFlightOffers($flightRequest);
 
         return new JsonResponse($flightPlans);

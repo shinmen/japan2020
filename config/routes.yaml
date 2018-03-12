@@ -18,6 +18,6 @@ read_batch_stream:
     methods: ['GET']
 
 request_flight_offers:    
-    path: /flights/{originAirportCode}/{destinationAirportCode}/{departureDate}/{returnDate}
+    path: /flights/offers
     defaults: { _controller: 'App\Application\FlightRequestController' }
-    methods: ['GET']
+    methods: ['POST']
