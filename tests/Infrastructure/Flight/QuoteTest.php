@@ -3,8 +3,9 @@
 namespace App\Tests\Infrastructure\Flight;
 
 use App\Domain\Travel\DTO\Flight;
-use App\Domain\Travel\DTO\FlightRequest;
+use App\Domain\Travel\DTO\FlightPlan;
 use App\Domain\Travel\DTO\TripInfo;
+use App\Infrastructure\Flight\FlightRequestToFlightPlanMapper;
 use GuzzleHttp\Client;
 use Symfony\Bundle\FrameworkBundle\Tests\TestCase;
 use \Datetime;
@@ -16,35 +17,38 @@ class QuoteTest extends TestCase
     {
         $path = dirname(__DIR__).'/../data/';
         $content = json_decode(file_get_contents($path.'flight_response.txt'), true);
+
+        $mapper = new FlightRequestToFlightPlanMapper();
+        $flightRequests = $mapper->buildFlightPlans($content);
         
-        $search = $content['FlightResponse']['FpSearch_AirLowFaresRS'];
-        $currency = $search['Currency']['CurrencyCode'];
-        $outboundOptions = [];
-        foreach ($search['OriginDestinationOptions']['OutBoundOptions']['OutBoundOption'] as $option) {
-            $outboundOptions = $this->getFlightOption($option, $outboundOptions);
-        }
+        // $search = $content['FlightResponse']['FpSearch_AirLowFaresRS'];
+        // $currency = $search['Currency']['CurrencyCode'];
+        // $outboundOptions = [];
+        // foreach ($search['OriginDestinationOptions']['OutBoundOptions']['OutBoundOption'] as $option) {
+        //     $outboundOptions = $this->getFlightOption($option, $outboundOptions);
+        // }
 
-        $inboundOptions = [];
-        foreach ($search['OriginDestinationOptions']['InBoundOptions']['InBoundOption'] as $option) {
-            $inboundOptions = $this->getFlightOption($option, $inboundOptions);
-        }
+        // $inboundOptions = [];
+        // foreach ($search['OriginDestinationOptions']['InBoundOptions']['InBoundOption'] as $option) {
+        //     $inboundOptions = $this->getFlightOption($option, $inboundOptions);
+        // }
 
-        $i = 0;
-        $flightRequests = [];
-        $refs = $search['SegmentReference']['RefDetails'];
-        while ($i <= 30) {
-            $outBoundId = $refs[$i]['OutBoundOptionId'][0];
-            $goingFlightInfo = $outboundOptions[$outBoundId];
-            $inBoundId = $refs[$i]['InBoundOptionId'][0];
-            $returnFlightInfo = $inboundOptions[$inBoundId];
+        // $i = 0;
+        // $flightRequests = [];
+        // $refs = $search['SegmentReference']['RefDetails'];
+        // while ($i <= 30) {
+        //     $outBoundId = $refs[$i]['OutBoundOptionId'][0];
+        //     $goingFlightInfo = $outboundOptions[$outBoundId];
+        //     $inBoundId = $refs[$i]['InBoundOptionId'][0];
+        //     $returnFlightInfo = $inboundOptions[$inBoundId];
 
-            $totalPerAdultFare = $refs[$i]['PTC_FareBreakdown']['Adult']['TotalAdultFare'];
-            $flightRequest = new FlightRequest($goingFlightInfo, $returnFlightInfo, $totalPerAdultFare);
-            $flightRequests[] = $flightRequest;
-            $i++;
-        }
+        //     $totalPerAdultFare = $refs[$i]['PTC_FareBreakdown']['Adult']['TotalAdultFare'];
+        //     $flightRequest = new FlightPlan($goingFlightInfo, $returnFlightInfo, $totalPerAdultFare);
+        //     $flightRequests[] = $flightRequest;
+        //     $i++;
+        // }
 
-        //var_dump($flightRequests);
+        var_dump($flightRequests);
 
         //var_dump(array_key_exists('ET673H10ET704H10ET', $inboundOptions));
     }

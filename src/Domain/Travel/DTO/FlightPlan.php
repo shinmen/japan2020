@@ -4,7 +4,7 @@ namespace App\Domain\Travel\DTO;
 
 use App\Domain\Travel\DTO\TripInfo;
 
-class FlightRequest
+class FlightPlan
 {
     /**
      * @var TripInfo
