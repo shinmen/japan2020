@@ -14,7 +14,7 @@ final class FlightOffers
     private $passwordCredentials;
 
     public function __construct(
-        ClientInterface $htpClient,
+        ClientInterface $httpClient,
         FlightRequestToFlightPlanMapper $mapper,
         string $loginCredentials,
         string $passwordCredentials
