@@ -2,14 +2,14 @@ old_sound_rabbit_mq:
     connections:
         default:
             url: '%env(RABBITMQ_URL)%'
-   producers:
-       # use 'old_sound_rabbit_mq.task_producer' service to send data.
-       save_flight_info:
-           connection:       default
-           exchange_options: { name: 'flight_request', type: direct }
-   consumers:
-       save_flight_info:
-           connection:       default
-           exchange_options: { name: 'flight_request', type: direct }
-           queue_options:    { name: 'task'}
-           callback:         App\Infrastructure\Flight\Consumer\FlightOffersConsumer
+    producers:
+        # use 'old_sound_rabbit_mq.task_producer' service to send data.
+        save_flight_info:
+            connection:       default
+            exchange_options: { name: 'flight_request', type: direct }
+    consumers:
+        save_flight_info:
+            connection:       default
+            exchange_options: { name: 'flight_request', type: direct }
+            queue_options:    { name: 'task'}
+            callback:         App\Infrastructure\Flight\Consumer\FlightOffersConsumer
