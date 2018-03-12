@@ -16,3 +16,8 @@ read_batch_stream:
     path: /events/{streamId}
     defaults: { _controller: 'App\Application\HistoryEventController' }
     methods: ['GET']
+
+request_flight_offers:    
+    path: /flights/{originAirportCode}/{destinationAirportCode}/{departureDate}/{returnDate}
+    defaults: { _controller: 'App\Application\FlightRequestController' }
+    methods: ['GET']
