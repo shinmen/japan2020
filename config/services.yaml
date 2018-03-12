@@ -31,12 +31,12 @@ services:
     PicoFeed\Reader\Reader: ~
 
     httpClient.event_store:
-        class: Guzzle\Client
+        class: GuzzleHttp\Client
         arguments:
             - {'base_uri': '%env(EVENT_STORE_URI)%'}
 
     httpClient.flight:
-        class: Guzzle\Client
+        class: GuzzleHttp\Client
         arguments: 
             - {'base_uri': '%env(FARE_PORTAL_URL)%'}
 

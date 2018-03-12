@@ -2,6 +2,8 @@
 
 namespace App\Infrastructure\Flight;
 
+use Datetime;
+
 final class TripRequest
 {
     private $originAirportCode;

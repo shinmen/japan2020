@@ -20,7 +20,7 @@ class FlightRequestController
 
     public function __invoke (Request $request) 
     {
-        $flightRequestParamsflightRequestParams = json_decode($request->getContent(), true);
+        $flightRequestParams = json_decode($request->getContent(), true);
         $goingTrip = new TripRequest(
             $flightRequestParams['originAirportCode'],
             $flightRequestParams['destinationAirportCode'],
