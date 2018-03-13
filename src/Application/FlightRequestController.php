@@ -22,8 +22,8 @@ class FlightRequestController
     {
         $flightRequestParams = json_decode($request->getContent(), true);
         $goingTrip = new TripRequest(
-            $flightRequestParams['originAirportCode'],
-            $flightRequestParams['destinationAirportCode'],
+            $flightRequestParams['originCode'],
+            $flightRequestParams['destinationCode'],
             new Datetime($flightRequestParams['departureDate'])
         );
         $returnTrip = new TripRequest(

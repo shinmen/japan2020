@@ -48,7 +48,7 @@ class FlightPlan implements \JsonSerializable
         return [
             'goingFlight' => $this->goingFlightInfo,
             'returnFlightInfo' => $this->returnFlightInfo,
-            'totalRatePerAdulte' => $this->totalRatePerAdulte,
+            'totalRatePerAdult' => $this->totalRatePerAdulte,
         ];
     }
 }
