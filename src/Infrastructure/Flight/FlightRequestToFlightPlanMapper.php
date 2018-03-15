@@ -39,7 +39,7 @@ final class FlightRequestToFlightPlanMapper
 
             $totalPerAdultFare = $flightDetails[$i]['PTC_FareBreakdown']['Adult']['TotalAdultFare'];
             $flightPlan = new FlightPlan($goingFlightInfo, $returnFlightInfo, $totalPerAdultFare);
-            $flightPlans[] = $flightRequest;
+            $flightPlans[] = $flightPlan;
             $i++;
         }
 

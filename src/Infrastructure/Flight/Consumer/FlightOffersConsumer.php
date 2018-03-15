@@ -11,6 +11,8 @@ final class FlightOffersConsumer implements ConsumerInterface
     
     public function execute(AMQPMessage $msg)
     {
+	$flightPlan = unserialize($msg->getBody());
+
         return self::NACK;
     }
 }
