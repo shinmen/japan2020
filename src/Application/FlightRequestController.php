@@ -45,9 +45,8 @@ class FlightRequestController
 
     private function dispatchOffers(array $flightPlans)
     {
-        $producer = $this->producer;
-        array_map(function(FlightPlan $flightPlan) use ($producer) {
-            $producer->publish(serialize($flightPlan));
-        }, $flightPlans);
+        foreach ($flightPlans as $flightPlan) {
+            $this->producer->publish(serialize($flightPlan));
+        }
     }
 }
