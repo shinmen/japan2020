@@ -11,5 +11,5 @@ old_sound_rabbit_mq:
         save_flight_info:
             connection:       default
             exchange_options: { name: 'flight_request', type: direct }
-            queue_options:    { name: 'task'}
+            queue_options:    { name: 'offers'}
             callback:         App\Infrastructure\Flight\Consumer\FlightOffersConsumer
