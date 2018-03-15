@@ -32,8 +32,8 @@ class FlightRequestController
             new Datetime($flightRequestParams['departureDate'])
         );
         $returnTrip = new TripRequest(
-            $flightRequestParams['destinationAirportCode'],
-            $flightRequestParams['originAirportCode'],
+            $flightRequestParams['destinationCode'],
+            $flightRequestParams['originCode'],
             new Datetime($flightRequestParams['returnDate'])
         );
         $flightRequest = new FlightRequest($goingTrip, $returnTrip);
