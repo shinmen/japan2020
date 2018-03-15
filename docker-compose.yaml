@@ -21,6 +21,8 @@ services:
         ports:
             - "15680:15672"
             - "5672:5672"
+        volumes:
+            - "./rabbitmq_data/:/var/lib/rabbitmq/mnesia/"
 
     mongo:
         image: "mongo:3"
