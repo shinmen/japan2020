@@ -8,6 +8,7 @@ use PhpAmqpLib\Message\AMQPMessage;
 final class FlightOffersConsumer implements ConsumerInterface
 {
     const NACK = false;
+    
     public function execute(AMQPMessage $msg)
     {
         return self::NACK;

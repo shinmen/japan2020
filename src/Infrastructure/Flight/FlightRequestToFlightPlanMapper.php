@@ -27,23 +27,23 @@ final class FlightRequestToFlightPlanMapper
         );
     }
 
-    private function mapFlightPlans(array $flighDetails, array $outboundOptions, array $inboundOptions): array
+    private function mapFlightPlans(array $flightDetails, array $outboundOptions, array $inboundOptions): array
     {
         $i = 0;
-        $flightRequests = [];
+        $flightPlans = [];
         while ($i <= self::MAX_RESULT) {
-            $outBoundId = $flighDetails[$i]['OutBoundOptionId'][0];
+            $outBoundId = $flightDetails[$i]['OutBoundOptionId'][0];
             $goingFlightInfo = $outboundOptions[$outBoundId];
-            $inBoundId = $flighDetails[$i]['InBoundOptionId'][0];
+            $inBoundId = $flightDetails[$i]['InBoundOptionId'][0];
             $returnFlightInfo = $inboundOptions[$inBoundId];
 
-            $totalPerAdultFare = $flighDetails[$i]['PTC_FareBreakdown']['Adult']['TotalAdultFare'];
-            $flightRequest = new FlightPlan($goingFlightInfo, $returnFlightInfo, $totalPerAdultFare);
-            $flightRequests[] = $flightRequest;
+            $totalPerAdultFare = $flightDetails[$i]['PTC_FareBreakdown']['Adult']['TotalAdultFare'];
+            $flightPlan = new FlightPlan($goingFlightInfo, $returnFlightInfo, $totalPerAdultFare);
+            $flightPlans[] = $flightRequest;
             $i++;
         }
 
-        return $flightRequests;
+        return $flightPlans;
     }
 
     private function mapGoingFlightInfo(array $outboundOptions): array
