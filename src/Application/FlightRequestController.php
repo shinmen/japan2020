@@ -50,7 +50,6 @@ class FlightRequestController
         //$flightPlans = $this->flightOffers->getFlightOffers($flightRequest);
         //$this->dispatchOffers($flightPlans);
 
-
         return new JsonResponse($flightPlans);
     }
 
