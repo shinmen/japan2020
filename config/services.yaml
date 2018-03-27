@@ -45,6 +45,11 @@ services:
         arguments: 
             - {'base_uri': '%env(FARE_PORTAL_URL)%'}
 
+    MongoDB\Client:
+        arguments:
+            $uri: '%env(MONGO_URL)%'
+            $uriOptions: {'username': '%env(MONGO_USERNAME)%', 'password': '%env(MONGO_PASSWORD)%'}
+
     App\Infrastructure\EventStore\EventStoreWriteStream:
         arguments:
             $httpClient: '@httpClient.event_store'
