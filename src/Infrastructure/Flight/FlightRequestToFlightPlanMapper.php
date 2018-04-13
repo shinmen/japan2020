@@ -10,6 +10,7 @@ use Datetime;
 final class FlightRequestToFlightPlanMapper
 {
     const MAX_RESULT = 30;
+    const USD_TO_EUR = 0.835;
 
     public function buildFlightPlans(array $content)
     {
@@ -37,7 +38,7 @@ final class FlightRequestToFlightPlanMapper
             $inBoundId = $flightDetails[$i]['InBoundOptionId'][0];
             $returnFlightInfo = $inboundOptions[$inBoundId];
 
-            $totalPerAdultFare = $flightDetails[$i]['PTC_FareBreakdown']['Adult']['TotalAdultFare'];
+            $totalPerAdultFare = $flightDetails[$i]['PTC_FareBreakdown']['Adult']['TotalAdultFare'] * self::USD_TO_EUR;
             $flightPlan = new FlightPlan($goingFlightInfo, $returnFlightInfo, $totalPerAdultFare);
             $flightPlans[] = $flightPlan;
             $i++;
