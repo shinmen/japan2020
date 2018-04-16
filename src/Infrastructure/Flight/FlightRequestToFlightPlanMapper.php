@@ -37,6 +37,9 @@ final class FlightRequestToFlightPlanMapper
             $goingFlightInfo = $outboundOptions[$outBoundId];
             $inBoundId = $flightDetails[$i]['InBoundOptionId'][0];
             $returnFlightInfo = $inboundOptions[$inBoundId];
+            if (!$goingFlightInfo || !$returnFlightInfo) {
+                continue;
+            }
 
             $totalPerAdultFare = $flightDetails[$i]['PTC_FareBreakdown']['Adult']['TotalAdultFare'] * self::USD_TO_EUR;
             $flightPlan = new FlightPlan($goingFlightInfo, $returnFlightInfo, $totalPerAdultFare);
