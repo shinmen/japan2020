@@ -76,8 +76,8 @@ final class FlightRequestToFlightPlanMapper
     private function mapFlightOption(array $option, array $flightInfos): array
     {
         $firstFlight = $option['FlightSegment'][0];
-        $companyName = $firstFlight['MarketingAirline']['Code'];
-        $duration = $firstFlight['FlightDuration'];
+        $companyName = $firstFlight['OperatedByAirline']['CompanyText'];
+        $duration = array_sum(array_column($option['FlightSegment'], 'FlightDuration'));
         $flights = $this->mapFlights($option['FlightSegment']);
 
         $trip = new TripInfo($duration, $companyName, $flights);
