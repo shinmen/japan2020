@@ -77,13 +77,29 @@ final class FlightRequestToFlightPlanMapper
     {
         $firstFlight = $option['FlightSegment'][0];
         $companyName = $firstFlight['OperatedByAirline']['CompanyText'];
-        $duration = array_sum(array_column($option['FlightSegment'], 'FlightDuration'));
+        $duration = $this->isDurationSameOnEachFlight($option['FlightSegment']) ?
+            $firstFlight['FlightDuration']:
+            $this->addAllFlightDuration($option['FlightSegment']) ;
         $flights = $this->mapFlights($option['FlightSegment']);
 
         $trip = new TripInfo($duration, $companyName, $flights);
         $flightInfos[$option['Segmentid']] = $trip;
 
         return $flightInfos;
+    }
+
+    /**
+     * Due to a misbuilt flight api, sometimes each flight duration equals to total trip duration
+     */
+    private function isDurationSameOnEachFlight(array $flightSegments): bool
+    {
+        return  $this->addAllFlightDuration($flightSegments) / count($flightSegments) == 
+                $flightSegments[0]['FlightDuration'];
+    }
+
+    private function addAllFlightDuration(array $flightSegments): float
+    {
+        return array_sum(array_column($flightSegments, 'FlightDuration'));
     }
 
     /**
