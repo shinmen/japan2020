@@ -32,14 +32,11 @@ final class FlightRequestToFlightPlanMapper
     {
         $i = 0;
         $flightPlans = [];
-        while ($i <= self::MAX_RESULT) {
+        while ($i <= $this->limitResult(count($flightDetails))) {
             $outBoundId = $flightDetails[$i]['OutBoundOptionId'][0];
             $goingFlightInfo = $outboundOptions[$outBoundId];
             $inBoundId = $flightDetails[$i]['InBoundOptionId'][0];
             $returnFlightInfo = $inboundOptions[$inBoundId];
-            if (!$goingFlightInfo || !$returnFlightInfo) {
-                continue;
-            }
 
             $totalPerAdultFare = $flightDetails[$i]['PTC_FareBreakdown']['Adult']['TotalAdultFare'] * self::USD_TO_EUR;
             $flightPlan = new FlightPlan($goingFlightInfo, $returnFlightInfo, $totalPerAdultFare);
@@ -48,6 +45,11 @@ final class FlightRequestToFlightPlanMapper
         }
 
         return $flightPlans;
+    }
+
+    private function limitResult(int $flightOffersNb): int
+    {
+        return $flightOffersNb >= self::MAX_RESULT ? self::MAX_RESULT : $flightOffersNb -1;
     }
 
     private function mapGoingFlightInfo(array $outboundOptions): array

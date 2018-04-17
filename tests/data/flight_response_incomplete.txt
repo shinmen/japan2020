@@ -1,0 +1,323 @@
+{
+  "FlightResponse": {
+    "FpSearch_AirLowFaresRS": {
+      "CntKey": "27d581b7-4ee9-43a1-be3e-947dbb2684f5",
+      "ServerStamp": "",
+      "Currency": {
+        "CurrencyCode": "USD"
+      },
+      "OriginDestinationOptions": {
+        "OutBoundOptions": {
+          "OutBoundOption": [
+            {
+              "Segmentid": "CZ7107V1CZ348V1CZ389V1CZ",
+              "FlightSegment": [
+                {
+                  "DepartureAirport": {
+                    "LocationCode": "BOD"
+                  },
+                  "ArrivalAirport": {
+                    "LocationCode": "CDG"
+                  },
+                  "Equipment": {
+                    "AirEquipType": "321"
+                  },
+                  "FlightCabin": {
+                    "CabinType": "Coach"
+                  },
+                  "FlightClass": {
+                    "ClassType": "V"
+                  },
+                  "MarketingAirline": {
+                    "Code": "CZ"
+                  },
+                  "OperatedByAirline": {
+                    "CompanyText": "Air France"
+                  },
+                  "Flight": {
+                    "FlightType": "O"
+                  },
+                  "OpaqueType": "0",
+                  "ShowBaggageAlert": false,
+                  "StopAirports": null,
+                  "FlightNumber": "7107",
+                  "DepartureDateTime": "02Nov2018T06:15 AM",
+                  "ArrivalDateTime": "02Nov2018T07:40 AM",
+                  "FlightDuration": "1.25",
+                  "FDType": "S",
+                  "StopQuantity": 0,
+                  "RPH": 1
+                },
+                {
+                  "DepartureAirport": {
+                    "LocationCode": "CDG"
+                  },
+                  "ArrivalAirport": {
+                    "LocationCode": "CAN"
+                  },
+                  "Equipment": {
+                    "AirEquipType": "332"
+                  },
+                  "FlightCabin": {
+                    "CabinType": "Coach"
+                  },
+                  "FlightClass": {
+                    "ClassType": "V"
+                  },
+                  "MarketingAirline": {
+                    "Code": "CZ"
+                  },
+                  "OperatedByAirline": {
+                    "CompanyText": "CZ"
+                  },
+                  "Flight": {
+                    "FlightType": "O"
+                  },
+                  "OpaqueType": "0",
+                  "ShowBaggageAlert": false,
+                  "StopAirports": null,
+                  "FlightNumber": "348",
+                  "DepartureDateTime": "02Nov2018T11:45 AM",
+                  "ArrivalDateTime": "03Nov2018T06:20 AM",
+                  "FlightDuration": "11.35",
+                  "FDType": "S",
+                  "StopQuantity": 0,
+                  "RPH": 2
+                },
+                {
+                  "DepartureAirport": {
+                    "LocationCode": "CAN"
+                  },
+                  "ArrivalAirport": {
+                    "LocationCode": "KIX"
+                  },
+                  "Equipment": {
+                    "AirEquipType": "320"
+                  },
+                  "FlightCabin": {
+                    "CabinType": "Coach"
+                  },
+                  "FlightClass": {
+                    "ClassType": "V"
+                  },
+                  "MarketingAirline": {
+                    "Code": "CZ"
+                  },
+                  "OperatedByAirline": {
+                    "CompanyText": "CZ"
+                  },
+                  "Flight": {
+                    "FlightType": "O"
+                  },
+                  "OpaqueType": "0",
+                  "ShowBaggageAlert": false,
+                  "StopAirports": null,
+                  "FlightNumber": "389",
+                  "DepartureDateTime": "03Nov2018T08:40 AM",
+                  "ArrivalDateTime": "03Nov2018T01:00 PM",
+                  "FlightDuration": "3.20",
+                  "FDType": "S",
+                  "StopQuantity": 0,
+                  "RPH": 3
+                }
+              ]
+            }
+          ]
+        },
+        "InBoundOptions": {
+          "InBoundOption": [
+            {
+              "Segmentid": "CZ390P1CZ783E1CZ7128E1CZ",
+              "FlightSegment": [
+                {
+                  "DepartureAirport": {
+                    "LocationCode": "KIX"
+                  },
+                  "ArrivalAirport": {
+                    "LocationCode": "CAN"
+                  },
+                  "Equipment": {
+                    "AirEquipType": "320"
+                  },
+                  "FlightCabin": {
+                    "CabinType": "Coach"
+                  },
+                  "FlightClass": {
+                    "ClassType": "P"
+                  },
+                  "MarketingAirline": {
+                    "Code": "CZ"
+                  },
+                  "OperatedByAirline": {
+                    "CompanyText": "CZ"
+                  },
+                  "Flight": {
+                    "FlightType": "I"
+                  },
+                  "OpaqueType": "0",
+                  "ShowBaggageAlert": false,
+                  "StopAirports": null,
+                  "FlightNumber": "390",
+                  "DepartureDateTime": "10Nov2018T02:00 PM",
+                  "ArrivalDateTime": "10Nov2018T05:25 PM",
+                  "FlightDuration": "4.25",
+                  "FDType": "S",
+                  "StopQuantity": 0,
+                  "RPH": 1
+                },
+                {
+                  "DepartureAirport": {
+                    "LocationCode": "CAN"
+                  },
+                  "ArrivalAirport": {
+                    "LocationCode": "CDG"
+                  },
+                  "Equipment": {
+                    "AirEquipType": "789"
+                  },
+                  "FlightCabin": {
+                    "CabinType": "Coach"
+                  },
+                  "FlightClass": {
+                    "ClassType": "E"
+                  },
+                  "MarketingAirline": {
+                    "Code": "CZ"
+                  },
+                  "OperatedByAirline": {
+                    "CompanyText": "Air France"
+                  },
+                  "Flight": {
+                    "FlightType": "I"
+                  },
+                  "OpaqueType": "0",
+                  "ShowBaggageAlert": false,
+                  "StopAirports": null,
+                  "FlightNumber": "783",
+                  "DepartureDateTime": "10Nov2018T11:25 PM",
+                  "ArrivalDateTime": "11Nov2018T05:30 AM",
+                  "FlightDuration": "13.5",
+                  "FDType": "S",
+                  "StopQuantity": 0,
+                  "RPH": 2
+                },
+                {
+                  "DepartureAirport": {
+                    "LocationCode": "CDG"
+                  },
+                  "ArrivalAirport": {
+                    "LocationCode": "BOD"
+                  },
+                  "Equipment": {
+                    "AirEquipType": "320"
+                  },
+                  "FlightCabin": {
+                    "CabinType": "Coach"
+                  },
+                  "FlightClass": {
+                    "ClassType": "E"
+                  },
+                  "MarketingAirline": {
+                    "Code": "CZ"
+                  },
+                  "OperatedByAirline": {
+                    "CompanyText": "Air France"
+                  },
+                  "Flight": {
+                    "FlightType": "I"
+                  },
+                  "OpaqueType": "0",
+                  "ShowBaggageAlert": false,
+                  "StopAirports": null,
+                  "FlightNumber": "7128",
+                  "DepartureDateTime": "11Nov2018T07:10 AM",
+                  "ArrivalDateTime": "11Nov2018T08:20 AM",
+                  "FlightDuration": "1.10",
+                  "FDType": "S",
+                  "StopQuantity": 0,
+                  "RPH": 3
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "SegmentReference": {
+        "RefDetails": [
+          {
+            "CNT": {
+              "ID": 1396,
+              "ETicket": true,
+              "Engine": null,
+              "Source": 1,
+              "ValidatingCarrier": "CZ",
+              "FareBasis": "V2LNNFR,V2LNNFR,V5SAFQJ,E2LNCFR,E2LNCFR,E2LNCFR",
+              "SeatsLeft": 4,
+              "IsLmf": false,
+              "IsFlexi": false,
+              "IsCheapest": false,
+              "AllowBrandedFare": false,
+              "IsGw": false,
+              "IsHiddenDeal": false,
+              "IsBorderCity": false,
+              "IsFusionFare": false,
+              "IsSRI": false,
+              "IsUpgradeEnabled": false,
+              "IsFlyrEnabled": true,
+              "OCash": 0.0,
+              "Isinstant": false
+            },
+            "OutBoundOptionId": [
+              "CZ7107V1CZ348V1CZ389V1CZ"
+            ],
+            "InBoundOptionId": [
+              "CZ390P1CZ783E1CZ7128E1CZ"
+            ],
+            "PTC_FareBreakdown": {
+              "Adult": {
+                "TotalAdultFare": 1314.8,
+                "BaseFare": 1147.0,
+                "TaxesandFees": 177.799988,
+                "Fees": 33.0,
+                "Discount": -10.0,
+                "InsAmtSpecified": false
+              },
+              "Seniors": null,
+              "Child": null,
+              "SeatInfant": null,
+              "LapInfant": null,
+              "Youth": null,
+              "Kid": null
+            },
+            "SRIDetail": null
+          }
+        ],
+        "TaxCode": "FP"
+      },
+      "FlexiDateOptions": {
+        "FlexiOption": [
+          
+        ]
+      },
+      "InsuranceApplicability": false,
+      "CardFeeDetails": {
+        "CardFeeDetail": [
+          
+        ]
+      },
+      "PassportRequired": "RJ,IR,7M,GE,5P,XR,EQ,3P,W3,R3,IR,MS,3U,EQ,DN,KC,K5,KX,S7,SV,BT,UT,R3,OB,TT,G9,3O,TR,3K,AK,FY,5J,Z2,QZ,D7,PQ,DG,JT,0B,6E",
+      "CheapestFare": 0.0,
+      "Banner": "NA",
+      "VerificationEngines": "",
+      "TAAmountSpecified": false,
+      "CurrencySpecified": true,
+      "LoyaltyFactorDetails": {
+        "LoyaltyFactor": 1.0
+      }
+    },
+    "ErrorReport": null
+  },
+  "IsSearchCompleted": false,
+  "ContractIdsToDrop": null,
+  "ServerName": null
+}
