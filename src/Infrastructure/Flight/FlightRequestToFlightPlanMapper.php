@@ -93,13 +93,13 @@ final class FlightRequestToFlightPlanMapper
      */
     private function isDurationSameOnEachFlight(array $flightSegments): bool
     {
-        return  $this->addAllFlightDuration($flightSegments) / count($flightSegments) == 
-                $flightSegments[0]['FlightDuration'];
+        return  round($this->addAllFlightDuration($flightSegments) / count($flightSegments), 2) == 
+                round($flightSegments[0]['FlightDuration'], 2);
     }
 
     private function addAllFlightDuration(array $flightSegments): float
     {
-        return array_sum(array_column($flightSegments, 'FlightDuration'));
+        return round(array_sum(array_column($flightSegments, 'FlightDuration')), 2);
     }
 
     /**
@@ -119,7 +119,7 @@ final class FlightRequestToFlightPlanMapper
                 $flight['DepartureAirport']['LocationCode'],
                 $this->extractTime($flight['ArrivalDateTime']),
                 $flight['ArrivalAirport']['LocationCode'],
-                $flightDuration
+                round($flightDuration, 2)
             );
         }
 
