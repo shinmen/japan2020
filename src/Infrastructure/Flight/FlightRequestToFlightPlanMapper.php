@@ -109,13 +109,17 @@ final class FlightRequestToFlightPlanMapper
     {
         $flights = [];
         foreach ($flightSegments as $flight) {
+            $flightDuration = $this->isDurationSameOnEachFlight($flightSegments) ?
+                $flight['FlightDuration'] / count($flightSegments) :
+                $flight['FlightDuration'];
+
             $flights[] = new Flight(
                 $flight['FlightNumber'], 
                 $this->extractTime($flight['DepartureDateTime']),
                 $flight['DepartureAirport']['LocationCode'],
                 $this->extractTime($flight['ArrivalDateTime']),
                 $flight['ArrivalAirport']['LocationCode'],
-                $flight['FlightDuration']
+                $flightDuration
             );
         }
 
