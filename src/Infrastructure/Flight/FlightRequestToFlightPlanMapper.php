@@ -98,7 +98,8 @@ final class FlightRequestToFlightPlanMapper
                 $this->extractTime($flight['DepartureDateTime']),
                 $flight['DepartureAirport']['LocationCode'],
                 $this->extractTime($flight['ArrivalDateTime']),
-                $flight['ArrivalAirport']['LocationCode']
+                $flight['ArrivalAirport']['LocationCode'],
+                $flight['FlightDuration']
             );
         }
 

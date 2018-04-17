@@ -31,18 +31,25 @@ final class Flight implements \JsonSerializable
      */
     private $arrivalDate;
 
+    /**
+     * @var float
+     */
+    private $duration;
+
     public function __construct(
         int $flightNumber,
         DateTime $departureDate,
         string $departureAirport,
         Datetime $arrivalDate,
-        string $arrivalAirport
+        string $arrivalAirport,
+        float $duration
     ) {
         $this->flightNumber = $flightNumber;
         $this->arrivalDate = $arrivalDate;
         $this->departureDate = $departureDate;
         $this->departureAirport = $departureAirport;
         $this->arrivalAirport = $arrivalAirport;
+        $this->duration = $duration;
     }
 
     public function getFlightNumber(): int
@@ -62,7 +69,7 @@ final class Flight implements \JsonSerializable
 
     public function getDuration(): float
     {
-        return $this->departureDate->diff($arrivalDate);
+        return $this->duration;
     }
 
     public function getDepartueAirport(): string
@@ -83,6 +90,7 @@ final class Flight implements \JsonSerializable
             'arrivalAirport' => $this->arrivalAirport,
             'departureDate' => $this->departureDate->format('Y-m-d H:i'),
             'departureAirport' => $this->departureAirport,
+            'duration' => $this->duration,
         ];
     }
 }
