@@ -21,11 +21,28 @@ final class FlightRequestToFlightPlanMapper
         $outboundOptions = $this->mapGoingFlightInfo($originDestinationOptions['OutBoundOptions']['OutBoundOption']);
         $inboundOptions = $this->mapReturnFlightInfo($originDestinationOptions['InBoundOptions']['InBoundOption']);
 
-        return $this->mapFlightPlans(
-            $search['SegmentReference']['RefDetails'],
-            $outboundOptions,
-            $inboundOptions
+        return $this->sortFlightPlansByPrice(
+            $this->mapFlightPlans(
+                $search['SegmentReference']['RefDetails'],
+                $outboundOptions,
+                $inboundOptions
+            )
         );
+    }
+
+    private function sortFlightPlansByPrice(array $flightPlans)
+    {
+        usort($flightPlans, function($previousFlightPlan, $nextFlightPlan) {
+            if ($previousFlightPlan->getTotalRatePerAdulte() == $nextFlightPlan->getTotalRatePerAdulte()) {
+                return 0;
+            }
+            return ($previousFlightPlan->getTotalRatePerAdulte() < $nextFlightPlan->getTotalRatePerAdulte()) ?
+                -1 :
+                1
+            ;
+        });
+
+        return $flightPlans;
     }
 
     private function mapFlightPlans(array $flightDetails, array $outboundOptions, array $inboundOptions): array
