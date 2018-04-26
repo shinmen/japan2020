@@ -5,12 +5,23 @@ namespace App\Infrastructure\Flight;
 use App\Domain\Travel\DTO\Flight;
 use App\Domain\Travel\DTO\FlightPlan;
 use App\Domain\Travel\DTO\TripInfo;
+use App\Infrastructure\Flight\CodeToAirportMapper;
 use Datetime;
 
 final class FlightRequestToFlightPlanMapper
 {
     const MAX_RESULT = 30;
     const USD_TO_EUR = 0.835;
+
+    /**
+     * @var CodeToAirportMapper
+     */
+    private $airportMapper;
+
+    public function __construct(CodeToAirportMapper $airportMapper)
+    {
+        $this->airportMapper = $airportMapper;
+    }
 
     public function buildFlightPlans(array $content)
     {
@@ -130,12 +141,20 @@ final class FlightRequestToFlightPlanMapper
                 $flight['FlightDuration'] / count($flightSegments) :
                 $flight['FlightDuration'];
 
+            $departureAirport = $this->airportMapper->mapAirportFromCode(
+                $flight['DepartureAirport']['LocationCode']
+            );
+
+            $returnAirport = $this->airportMapper->mapAirportFromCode(
+                $flight['ArrivalAirport']['LocationCode']
+            );
+
             $flights[] = new Flight(
                 $flight['FlightNumber'], 
                 $this->extractTime($flight['DepartureDateTime']),
-                $flight['DepartureAirport']['LocationCode'],
+                $departureAirport,
                 $this->extractTime($flight['ArrivalDateTime']),
-                $flight['ArrivalAirport']['LocationCode'],
+                $returnAirport,
                 round($flightDuration, 2)
             );
         }

@@ -2,12 +2,17 @@
 
 namespace App\Domain\Travel\DTO;
 
-final class Airport
+final class Airport implements \JsonSerializable
 {
     /**
      * @var string
      */
     private $code;
+
+    /**
+     * @var string
+     */
+    private $name;
 
     /**
      * @var string
@@ -19,11 +24,17 @@ final class Airport
      */
     private $country;
 
-    public function __construct(string $code, string $city, string $country)
+    public function __construct(string $code, string $name,string $city, string $country)
     {
         $this->code = $code;
+        $this->name = $name;
         $this->city = $city;
         $this->country = $country;
+    }
+
+    public function getName()
+    {
+        return $this->name;
     }
 
     public function getCode(): string
@@ -39,5 +50,15 @@ final class Airport
     public function getCountry(): string
     {
         return $this->country;
+    }
+
+    public function jsonSerialize()
+    {
+        return [
+            'name' => $this->name,
+            'code' => $this->code,
+            'city' => $this->city,
+            'country' => $this->country,
+        ];
     }
 }

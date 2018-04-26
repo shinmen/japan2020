@@ -68,3 +68,7 @@ services:
             $loginCredentials: '%env(FARE_PORTAL_LOGIN)%'
             $passwordCredentials: '%env(FARE_PORTAL_PASSWORD)%'
 
+    App\Infrastructure\Flight\CodeToAirportMapper:
+        arguments:
+            $airportFilePath: '%kernel.project_dir%/data/airports.json'
+

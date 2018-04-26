@@ -2,6 +2,7 @@
 
 namespace App\Domain\Travel\DTO;
 
+use App\Domain\Travel\DTO\Airport;
 use Datetime;
 
 final class Flight implements \JsonSerializable
@@ -39,9 +40,9 @@ final class Flight implements \JsonSerializable
     public function __construct(
         int $flightNumber,
         DateTime $departureDate,
-        string $departureAirport,
+        Airport $departureAirport,
         Datetime $arrivalDate,
-        string $arrivalAirport,
+        Airport $arrivalAirport,
         float $duration
     ) {
         $this->flightNumber = $flightNumber;
@@ -72,12 +73,12 @@ final class Flight implements \JsonSerializable
         return $this->duration;
     }
 
-    public function getDepartueAirport(): string
+    public function getDepartueAirport(): Airport
     {
         return $this->departureAirport;
     }
 
-    public function getArrivalAirport(): string
+    public function getArrivalAirport(): Airport
     {
         return $this->arrivalAirport;
     }
