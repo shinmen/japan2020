@@ -11,6 +11,7 @@ use OldSound\RabbitMqBundle\RabbitMq\Producer;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use App\Infrastructure\Flight\FlightRequestToFlightPlanMapper;
+use App\Infrastructure\Flight\CodeToAirportMapper;
 
 class FlightRequestController
 {
@@ -40,8 +41,10 @@ class FlightRequestController
         $flightRequest = new FlightRequest($goingTrip, $returnTrip);
         $path = dirname(__DIR__).'/../tests/data/';
         $content = json_decode(file_get_contents($path.'flight_response.txt'), true);
-
-        $mapper = new FlightRequestToFlightPlanMapper();
+	
+	$airportFilePath = dirname(__DIR__).'/../data/airports.json';
+	$airportMapper = new CodeToAirportMapper($airportFilePath);
+        $mapper = new FlightRequestToFlightPlanMapper($airportMapper);
         $flightPlans = $mapper->buildFlightPlans($content);
 
         //$flightPlans = $this->flightOffers->getFlightOffers($flightRequest);
