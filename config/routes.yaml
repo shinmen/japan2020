@@ -24,5 +24,5 @@ request_flight_offers:
 
 visits_list:    
     path: /visits
-    defaults: { _controller: 'App\Application\HistoryEventController' }
+    defaults: { _controller: 'App\Application\VisitListController' }
     methods: ['GET']
