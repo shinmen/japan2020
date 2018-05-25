@@ -1,0 +1,62 @@
+[
+    {
+        "name": "Tokyo",
+        "latitude": "35.742707",
+        "longitude": "139.731073",
+        "tourism_info": ""
+    },
+    {
+        "name": "Kyoto",
+        "latitude": "34.986121",
+        "longitude": "135.758756",
+        "tourism_info": ""
+    },
+    {
+        "name": "Osaka",
+        "latitude": "34.676419",
+        "longitude": "135.498154",
+        "tourism_info": ""
+    },
+    {
+        "name": "Nara",
+        "latitude": "34.686316",
+        "longitude": "135.805149",
+        "tourism_info": ""
+    },
+    {
+        "name": "Hakone",
+        "latitude": "35.223372",
+        "longitude": "139.007751",
+        "tourism_info": ""
+    },
+    {
+        "name": "Nagoya",
+        "latitude": "35.153861",
+        "longitude": "136.934372",
+        "tourism_info": ""
+    },
+    {
+        "name": "Hiroshima",
+        "latitude": "34.393005",
+        "longitude": "132.452946",
+        "tourism_info": ""
+    },
+    {
+        "name": "Miyajima",
+        "latitude": "34.298563",
+        "longitude": "132.324315",
+        "tourism_info": ""
+    },
+    {
+        "name": "Nikko",
+        "latitude": "36.723934",
+        "longitude": "139.693554",
+        "tourism_info": ""
+    },
+    {
+        "name": "Takaragawa",
+        "latitude": "36.848339",
+        "longitude": "139.047056",
+        "tourism_info": ""
+    },
+]

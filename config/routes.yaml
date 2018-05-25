@@ -21,3 +21,8 @@ request_flight_offers:
     path: /flights/offers
     defaults: { _controller: 'App\Application\FlightRequestController' }
     methods: ['POST']
+
+visits_list:    
+    path: /visits
+    defaults: { _controller: 'App\Application\HistoryEventController' }
+    methods: ['GET']
