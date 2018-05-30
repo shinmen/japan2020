@@ -30,7 +30,7 @@ final class OvernightRequestToOvernightMapper
         return $accomodationOffers;
     }
 
-    private function buildAccomodationDetails(): Accomodation
+    private function buildAccomodationDetails(array $accomodation): Accomodation
     {
         $detail = $accomodation['listing'];
         return new Accomodation(
@@ -44,7 +44,7 @@ final class OvernightRequestToOvernightMapper
         );
     }
 
-    private function buildGeolocation(): Geolocation
+    private function buildGeolocation(array $accomodation): Geolocation
     {
         return Geolocation::pinpoint(
             $accomodation['listing']['lat'],

@@ -13,7 +13,7 @@ final class Overnights
     public function __construct(ClientInterface $client, string $overnightApiKey)
     {
         $this->client = $client;
-        $this->apiKey = $apiKey;
+        $this->apiKey = $overnightApiKey;
     }
 
     public function getOvernights(
@@ -38,13 +38,12 @@ final class Overnights
                    'guests' => $guests,
                    'location' => sprintf('%s,Japan', $city),
                    '_intents' => 'p1',
-                   'key' => $this->overnightApiKey,
+                   'key' => $this->apiKey,
                    'currency' => 'EUR',
                    'locale' => 'fr',
                 ],
             ]
         );
-
         $content = json_decode((string) $response->getBody(), true);
         $mapper = new OvernightRequestToOvernightMapper();
 
