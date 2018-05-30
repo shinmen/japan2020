@@ -16,8 +16,12 @@ final class Overnights
         $this->apiKey = $apiKey;
     }
 
-    public function getOvernights(DateTimeInterface $checkinDate, DateTimeInterface $checkoutDate, int $guests)
-    {
+    public function getOvernights(
+      DateTimeInterface $checkinDate,
+      DateTimeInterface $checkoutDate,
+      int $guests,
+      string $city
+    ) {
         $response = $client->request('GET', '/api/v2/explore_tabs', [
                 'query' => [
                    'version' => '1.2.8',
@@ -32,7 +36,7 @@ final class Overnights
                    'infants' => 0,
                    'adults' => $guests,
                    'guests' => $guests,
-                   'location' => 'Tokyo,Japon',
+                   'location' => sprintf('%s,Japan', $city),
                    '_intents' => 'p1',
                    'key' => $this->overnightApiKey,
                    'currency' => 'EUR',
@@ -44,6 +48,6 @@ final class Overnights
         $content = json_decode((string) $response->getBody(), true);
         $mapper = new OvernightRequestToOvernightMapper();
 
-        return $mapper->buildOvernights($content);
+        return $mapper->buildOvernights($guests, $content);
     }
 }

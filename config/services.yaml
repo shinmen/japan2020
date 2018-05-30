@@ -80,3 +80,8 @@ services:
         arguments:
             $airportFilePath: '%kernel.project_dir%/data/airports.json'
 
+    App\Infrastructure\Overnight\Overnights:
+        arguments:
+            $client: '@httpClient.overnight'
+
+
