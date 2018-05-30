@@ -22,7 +22,7 @@ final class Overnights
       int $guests,
       string $city
     ) {
-        $response = $client->request('GET', '/api/v2/explore_tabs', [
+        $response = $this->client->request('GET', '/api/v2/explore_tabs', [
                 'query' => [
                    'version' => '1.2.8',
                    '_format' => 'for_explore_search_web',

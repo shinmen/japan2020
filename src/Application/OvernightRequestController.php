@@ -5,7 +5,7 @@ namespace App\Application;
 use App\Infrastructure\Overnight\Overnights;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
-use DatetimeImmutable;
+use Datetime;
 
 final class OvernightRequestController
 {
@@ -23,8 +23,8 @@ final class OvernightRequestController
     {
         $overnightRequestParams = json_decode($request->getContent(), true);
         $offers = $this->overnightOffers->getOvernights(
-            new DatetimeImmutable($overnightRequestParams['checkinDate']),
-            new DatetimeImmutable($overnightRequestParams['checkoutDate']),
+            new Datetime($overnightRequestParams['checkinDate']),
+            new Datetime($overnightRequestParams['checkoutDate']),
             $overnightRequestParams['guestsNb'],
             $overnightRequestParams['city']
         );
