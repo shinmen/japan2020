@@ -34,13 +34,13 @@ final class OvernightRequestToOvernightMapper
     {
         $detail = $accomodation['listing'];
         return new Accomodation(
-            $detail['name'],
+            utf8_encode($detail['name']),
             $detail['room_and_property_type'],
             $detail['person_capacity'],
             $detail['bedrooms'],
             $detail['beds'],
             $detail['bathrooms'],
-            $detail['city']
+            utf8_encode($detail['city'])
         );
     }
 
