@@ -1,0 +1,252 @@
+[
+    {
+        "accomodation": {
+            "commercialName": "Hanshe102#6 ppl home, 8 mins Skytree, 11 Asakusa",
+            "propertyType": "Logement entier",
+            "capacity": 6,
+            "bedroomsNb": 2,
+            "bedNb": 6,
+            "bathRoomNb": 1,
+            "city": "Sumida-ku"
+        },
+        "geolocation": {
+            "latitude": 35.733723909197714,
+            "longitude": 139.82161199723973
+        },
+        "pricePerPax": 99.16666666666667,
+        "weekReduction": 0.92,
+        "thumbnailUrl": "https://a0.muscache.com/im/pictures/31f66983-94ce-4f46-8372-1c26fca57678.jpg?aki_policy=large",
+        "otherThumbnails": [
+            "https://a0.muscache.com/im/pictures/31f66983-94ce-4f46-8372-1c26fca57678.jpg?aki_policy=large",
+            "https://a0.muscache.com/im/pictures/a236f373-fb73-4e8c-9870-b820bace7690.jpg?aki_policy=large",
+            "https://a0.muscache.com/im/pictures/7524bdd2-dc57-49b1-91c1-ea4689e90817.jpg?aki_policy=large",
+            "https://a0.muscache.com/im/pictures/4730994d-ee64-4f0f-9af8-0ec59b50bdbc.jpg?aki_policy=large",
+            "https://a0.muscache.com/im/pictures/6806048f-4ebb-4394-84d0-1b0e6a6e856b.jpg?aki_policy=large"
+        ]
+    },
+    {
+        "accomodation": {
+            "commercialName": "3DK(Max10)Asakusa 5min trainâ\u0098\u0086Sensoji, Skytree!",
+            "propertyType": "Maison entière",
+            "capacity": 10,
+            "bedroomsNb": 2,
+            "bedNb": 5,
+            "bathRoomNb": 1,
+            "city": "Sumida-ku"
+        },
+        "geolocation": {
+            "latitude": 35.722295763757444,
+            "longitude": 139.8167112285562
+        },
+        "pricePerPax": 132.16666666666666,
+        "weekReduction": 0.97,
+        "thumbnailUrl": "https://a0.muscache.com/im/pictures/7542c80c-868e-45fc-88a3-8d510d2af783.jpg?aki_policy=large",
+        "otherThumbnails": [
+            "https://a0.muscache.com/im/pictures/7542c80c-868e-45fc-88a3-8d510d2af783.jpg?aki_policy=large",
+            "https://a0.muscache.com/im/pictures/fb4ee230-6e1e-4d2b-92f6-6638599170df.jpg?aki_policy=large",
+            "https://a0.muscache.com/im/pictures/eb0536ff-0cca-4a7f-aa18-13f944b57418.jpg?aki_policy=large",
+            "https://a0.muscache.com/im/pictures/33fbcce9-fa46-4619-9337-76473d20eddd.jpg?aki_policy=large",
+            "https://a0.muscache.com/im/pictures/b9a2ca23-9935-4cc3-92ef-d42b02f2f583.jpg?aki_policy=large"
+        ]
+    },
+    {
+        "accomodation": {
+            "commercialName": "Newly Renovated! 7 Min-SHINJUKU Family Apt#4",
+            "propertyType": "Logement entier",
+            "capacity": 6,
+            "bedroomsNb": 2,
+            "bedNb": 4,
+            "bathRoomNb": 1,
+            "city": "Shinjuku"
+        },
+        "geolocation": {
+            "latitude": 35.71139885097676,
+            "longitude": 139.71033471193024
+        },
+        "pricePerPax": 113.5,
+        "weekReduction": 0.92,
+        "thumbnailUrl": "https://a0.muscache.com/im/pictures/7afd4ee8-aa32-4387-84c1-c750779518b4.jpg?aki_policy=large",
+        "otherThumbnails": [
+            "https://a0.muscache.com/im/pictures/7afd4ee8-aa32-4387-84c1-c750779518b4.jpg?aki_policy=large",
+            "https://a0.muscache.com/im/pictures/428859b5-764a-4a3b-9532-2ab361f4fa68.jpg?aki_policy=large",
+            "https://a0.muscache.com/im/pictures/15e64508-0f4e-48e1-9c19-a144f951db58.jpg?aki_policy=large",
+            "https://a0.muscache.com/im/pictures/1a1b96ed-0f7f-49bc-831f-146547fc2710.jpg?aki_policy=large",
+            "https://a0.muscache.com/im/pictures/d7063443-9aab-4683-aa85-be8655e6633d.jpg?aki_policy=large"
+        ]
+    },
+    {
+        "accomodation": {
+            "commercialName": "2min walk Sta.! Easy access to Shibuya!!Max7pax#43",
+            "propertyType": "Logement entier",
+            "capacity": 7,
+            "bedroomsNb": 1,
+            "bedNb": 4,
+            "bathRoomNb": 1,
+            "city": "Suginami-ku"
+        },
+        "geolocation": {
+            "latitude": 35.68315316559668,
+            "longitude": 139.6146805878142
+        },
+        "pricePerPax": 120.66666666666667,
+        "weekReduction": 0.92,
+        "thumbnailUrl": "https://a0.muscache.com/im/pictures/551bf150-d7c5-4c2f-9150-6b3c102d3929.jpg?aki_policy=large",
+        "otherThumbnails": [
+            "https://a0.muscache.com/im/pictures/551bf150-d7c5-4c2f-9150-6b3c102d3929.jpg?aki_policy=large",
+            "https://a0.muscache.com/im/pictures/316cd19d-4f33-4747-bf4b-b7fb92bb0a13.jpg?aki_policy=large",
+            "https://a0.muscache.com/im/pictures/15543b08-5042-42cb-96dd-440d46ee1b66.jpg?aki_policy=large",
+            "https://a0.muscache.com/im/pictures/f1f107ee-b594-415d-ae6c-2db638a72afd.jpg?aki_policy=large",
+            "https://a0.muscache.com/im/pictures/130eb838-ae6e-421a-8ddc-d00407f330e1.jpg?aki_policy=large"
+        ]
+    },
+    {
+        "accomodation": {
+            "commercialName": "Close to shinjuku station. Portable wifi (ki3)",
+            "propertyType": "Logement entier",
+            "capacity": 16,
+            "bedroomsNb": 2,
+            "bedNb": 7,
+            "bathRoomNb": 1,
+            "city": "Shinjuku-ku"
+        },
+        "geolocation": {
+            "latitude": 35.69034333206684,
+            "longitude": 139.69759800787827
+        },
+        "pricePerPax": 157.33333333333334,
+        "weekReduction": 1,
+        "thumbnailUrl": "https://a0.muscache.com/im/pictures/235d7ceb-7069-48e0-b3bf-0bcccc307756.jpg?aki_policy=large",
+        "otherThumbnails": [
+            "https://a0.muscache.com/im/pictures/235d7ceb-7069-48e0-b3bf-0bcccc307756.jpg?aki_policy=large",
+            "https://a0.muscache.com/im/pictures/8c1954a4-421a-4e4d-a576-4b0847591d8e.jpg?aki_policy=large",
+            "https://a0.muscache.com/im/pictures/e0b72b48-2060-4e7b-8baf-8b42d5eec636.jpg?aki_policy=large",
+            "https://a0.muscache.com/im/pictures/0131fb7e-765a-4ed5-a108-dde37f1ec846.jpg?aki_policy=large",
+            "https://a0.muscache.com/im/pictures/ffc2e6f9-e721-40dd-952f-51d178827dbf.jpg?aki_policy=large"
+        ]
+    },
+    {
+        "accomodation": {
+            "commercialName": "Airport/Sta Transfer! Cozy House+JR sat 5mins#15",
+            "propertyType": "Maison entière",
+            "capacity": 12,
+            "bedroomsNb": 3,
+            "bedNb": 8,
+            "bathRoomNb": 1,
+            "city": "Kita-ku"
+        },
+        "geolocation": {
+            "latitude": 35.79107886820437,
+            "longitude": 139.70212847528157
+        },
+        "pricePerPax": 155,
+        "weekReduction": 1,
+        "thumbnailUrl": "https://a0.muscache.com/im/pictures/376b1bf8-4bd3-4985-bb9a-744343d775b9.jpg?aki_policy=large",
+        "otherThumbnails": [
+            "https://a0.muscache.com/im/pictures/376b1bf8-4bd3-4985-bb9a-744343d775b9.jpg?aki_policy=large",
+            "https://a0.muscache.com/im/pictures/dc756c88-2e32-4cbb-8b2e-1d0d05ab7eb0.jpg?aki_policy=large",
+            "https://a0.muscache.com/im/pictures/72959231-8237-4c80-a275-2b288ecb54fe.jpg?aki_policy=large",
+            "https://a0.muscache.com/im/pictures/10d8ba51-e282-40dd-ad21-0614430164d0.jpg?aki_policy=large",
+            "https://a0.muscache.com/im/pictures/28bf3313-1892-4cc1-a8ef-de0442b64dad.jpg?aki_policy=large"
+        ]
+    },
+    {
+        "accomodation": {
+            "commercialName": "Pretty Room in Shinjuku! 7min walk! FREE Wi-Fi",
+            "propertyType": "Logement entier",
+            "capacity": 7,
+            "bedroomsNb": 1,
+            "bedNb": 7,
+            "bathRoomNb": 1,
+            "city": "æ¸\u008bè°·å\u008cº"
+        },
+        "geolocation": {
+            "latitude": 35.686209890034405,
+            "longitude": 139.69578206843528
+        },
+        "pricePerPax": 163.83333333333334,
+        "weekReduction": 0.85,
+        "thumbnailUrl": "https://a0.muscache.com/im/pictures/52fce8e5-1542-48a2-865b-894274649538.jpg?aki_policy=large",
+        "otherThumbnails": [
+            "https://a0.muscache.com/im/pictures/52fce8e5-1542-48a2-865b-894274649538.jpg?aki_policy=large",
+            "https://a0.muscache.com/im/pictures/ea80e90a-51a6-42d8-af97-0736ed79e707.jpg?aki_policy=large",
+            "https://a0.muscache.com/im/pictures/58b81f1e-386f-4dd3-893c-b0403b0ac343.jpg?aki_policy=large",
+            "https://a0.muscache.com/im/pictures/0d54769a-ae9b-4332-b0a0-7e9e0698197b.jpg?aki_policy=large",
+            "https://a0.muscache.com/im/pictures/76c4015d-28fb-495f-998f-f5dcf6d4dae5.jpg?aki_policy=large"
+        ]
+    },
+    {
+        "accomodation": {
+            "commercialName": "#2|3BR-68ã\u008e¡ w/7beds|Ikebukuro Area|7min JR St|MAX12",
+            "propertyType": "Logement entier",
+            "capacity": 12,
+            "bedroomsNb": 3,
+            "bedNb": 7,
+            "bathRoomNb": 2,
+            "city": "Toshima-ku"
+        },
+        "geolocation": {
+            "latitude": 35.730266357470335,
+            "longitude": 139.73307845194861
+        },
+        "pricePerPax": 194,
+        "weekReduction": 1,
+        "thumbnailUrl": "https://a0.muscache.com/im/pictures/3200657c-18be-4297-a42c-b0ca8974c72b.jpg?aki_policy=large",
+        "otherThumbnails": [
+            "https://a0.muscache.com/im/pictures/3200657c-18be-4297-a42c-b0ca8974c72b.jpg?aki_policy=large",
+            "https://a0.muscache.com/im/pictures/06733f67-ef83-45b5-a368-7ceb43a85a27.jpg?aki_policy=large",
+            "https://a0.muscache.com/im/pictures/5d9ad653-e2e6-4736-82f0-e8a7da3c6525.jpg?aki_policy=large",
+            "https://a0.muscache.com/im/pictures/9c55306f-5c4b-4e95-8523-839f0e89c556.jpg?aki_policy=large",
+            "https://a0.muscache.com/im/pictures/058086d7-b926-494b-af0b-b93681398027.jpg?aki_policy=large"
+        ]
+    },
+    {
+        "accomodation": {
+            "commercialName": "ä¸\u0096ç\u0094°è°·apartment",
+            "propertyType": "Maison entière",
+            "capacity": 7,
+            "bedroomsNb": 2,
+            "bedNb": 7,
+            "bathRoomNb": 1,
+            "city": "Setagaya"
+        },
+        "geolocation": {
+            "latitude": 35.65823066956741,
+            "longitude": 139.65889401673917
+        },
+        "pricePerPax": 129,
+        "weekReduction": 0.8,
+        "thumbnailUrl": "https://a0.muscache.com/im/pictures/72670bb5-1036-495c-9aa2-7c13e776fdb9.jpg?aki_policy=large",
+        "otherThumbnails": [
+            "https://a0.muscache.com/im/pictures/72670bb5-1036-495c-9aa2-7c13e776fdb9.jpg?aki_policy=large",
+            "https://a0.muscache.com/im/pictures/a1c58d1e-5dfd-40f2-979a-7e64803b29c4.jpg?aki_policy=large",
+            "https://a0.muscache.com/im/pictures/98e43b36-23f3-4831-abe4-f23adf9ce73c.jpg?aki_policy=large",
+            "https://a0.muscache.com/im/pictures/21346868-6ba5-4f41-b0b3-7d332b893e79.jpg?aki_policy=large",
+            "https://a0.muscache.com/im/pictures/2826684b-ff77-4839-b498-b53891e992c3.jpg?aki_policy=large"
+        ]
+    },
+    {
+        "accomodation": {
+            "commercialName": "Stunning! 6min walk station-Shibuya Sweet apt#7",
+            "propertyType": "Logement entier",
+            "capacity": 7,
+            "bedroomsNb": 1,
+            "bedNb": 5,
+            "bathRoomNb": 1,
+            "city": "Meguro-ku"
+        },
+        "geolocation": {
+            "latitude": 35.65489681061527,
+            "longitude": 139.68812651943966
+        },
+        "pricePerPax": 182.66666666666666,
+        "weekReduction": 0.92,
+        "thumbnailUrl": "https://a0.muscache.com/im/pictures/d34b9c26-bf2e-4aea-b718-36015d4384d7.jpg?aki_policy=large",
+        "otherThumbnails": [
+            "https://a0.muscache.com/im/pictures/d34b9c26-bf2e-4aea-b718-36015d4384d7.jpg?aki_policy=large",
+            "https://a0.muscache.com/im/pictures/1bc5e80e-8890-4d52-adfd-78d6f1c45b4d.jpg?aki_policy=large",
+            "https://a0.muscache.com/im/pictures/a1abca1d-57cd-43b1-b37c-42e8b8ab305c.jpg?aki_policy=large",
+            "https://a0.muscache.com/im/pictures/1be50263-929f-4da2-921d-a58b617da686.jpg?aki_policy=large",
+            "https://a0.muscache.com/im/pictures/b5105d4b-8fc5-4653-add0-59b8d8d4a3a0.jpg?aki_policy=large"
+        ]
+    }
+]

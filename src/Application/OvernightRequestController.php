@@ -22,12 +22,14 @@ final class OvernightRequestController
     public function __invoke(Request $request)
     {
         $overnightRequestParams = json_decode($request->getContent(), true);
-        $offers = $this->overnightOffers->getOvernights(
-            new Datetime($overnightRequestParams['checkinDate']),
-            new Datetime($overnightRequestParams['checkoutDate']),
-            $overnightRequestParams['guestsNb'],
-            $overnightRequestParams['city']
-        );
+        //$offers = $this->overnightOffers->getOvernights(
+        //    new Datetime($overnightRequestParams['checkinDate']),
+        //    new Datetime($overnightRequestParams['checkoutDate']),
+        //    $overnightRequestParams['guestsNb'],
+        //    $overnightRequestParams['city']
+        //);
+	$path = dirname(__DIR__).'/../tests/data/';
+        $offers = json_decode(file_get_contents($path.'overnight_response.txt'), true);
         
         return new JsonResponse($offers);
     }
