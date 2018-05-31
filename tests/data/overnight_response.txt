@@ -1,6 +1,6 @@
 [
     {
-        "accomodation": {
+        "accommodation": {
             "commercialName": "Hanshe102#6 ppl home, 8 mins Skytree, 11 Asakusa",
             "propertyType": "Logement entier",
             "capacity": 6,
@@ -25,7 +25,7 @@
         ]
     },
     {
-        "accomodation": {
+        "accommodation": {
             "commercialName": "3DK(Max10)Asakusa 5min trainâ\u0098\u0086Sensoji, Skytree!",
             "propertyType": "Maison entière",
             "capacity": 10,
@@ -50,7 +50,7 @@
         ]
     },
     {
-        "accomodation": {
+        "accommodation": {
             "commercialName": "Newly Renovated! 7 Min-SHINJUKU Family Apt#4",
             "propertyType": "Logement entier",
             "capacity": 6,
@@ -75,7 +75,7 @@
         ]
     },
     {
-        "accomodation": {
+        "accommodation": {
             "commercialName": "2min walk Sta.! Easy access to Shibuya!!Max7pax#43",
             "propertyType": "Logement entier",
             "capacity": 7,
@@ -100,7 +100,7 @@
         ]
     },
     {
-        "accomodation": {
+        "accommodation": {
             "commercialName": "Close to shinjuku station. Portable wifi (ki3)",
             "propertyType": "Logement entier",
             "capacity": 16,
@@ -125,7 +125,7 @@
         ]
     },
     {
-        "accomodation": {
+        "accommodation": {
             "commercialName": "Airport/Sta Transfer! Cozy House+JR sat 5mins#15",
             "propertyType": "Maison entière",
             "capacity": 12,
@@ -150,7 +150,7 @@
         ]
     },
     {
-        "accomodation": {
+        "accommodation": {
             "commercialName": "Pretty Room in Shinjuku! 7min walk! FREE Wi-Fi",
             "propertyType": "Logement entier",
             "capacity": 7,
@@ -175,7 +175,7 @@
         ]
     },
     {
-        "accomodation": {
+        "accommodation": {
             "commercialName": "#2|3BR-68ã\u008e¡ w/7beds|Ikebukuro Area|7min JR St|MAX12",
             "propertyType": "Logement entier",
             "capacity": 12,
@@ -200,7 +200,7 @@
         ]
     },
     {
-        "accomodation": {
+        "accommodation": {
             "commercialName": "ä¸\u0096ç\u0094°è°·apartment",
             "propertyType": "Maison entière",
             "capacity": 7,
@@ -225,7 +225,7 @@
         ]
     },
     {
-        "accomodation": {
+        "accommodation": {
             "commercialName": "Stunning! 6min walk station-Shibuya Sweet apt#7",
             "propertyType": "Logement entier",
             "capacity": 7,
