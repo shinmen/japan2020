@@ -5,7 +5,7 @@ namespace App\Application;
 use App\Infrastructure\EventStore\EventDescriptionDataTransformer;
 use App\Infrastructure\EventStore\EventStoreWriteStream;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 final class NewBatchEventController
 {
@@ -28,6 +28,6 @@ final class NewBatchEventController
         }
         $response = $this->writer->writeBatchEvent($events);
 
-        return new Response('', $response->getStatusCode());
+        return new JsonResponse(['success' => true], $response->getStatusCode());
     }
 }
