@@ -6,5 +6,5 @@ use Psr\Http\Message\ResponseInterface;
 
 interface EventStoreWriteInterface
 {
-    public function writeBatchEvent(array $events): ResponseInterface;
+    public function writeBatchEvent(string $streamId, array $events): ResponseInterface;
 }
