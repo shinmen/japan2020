@@ -61,7 +61,7 @@ final class Overnight implements \JsonSerializable
     public function jsonSerialize():array
     {
         return [
-            'accomodation' => $this->accomodation,
+            'accommodation' => $this->accomodation,
             'geolocation' => $this->geolocation,
             'pricePerPax' => $this->pricePerPax,
             'weekReduction' => $this->weekReduction,
