@@ -54,6 +54,54 @@
         "tourism_info": ""
     },
     {
+        "name": "Kanazawa",
+        "latitude": "36.567690",
+        "longitude": "136.663357",
+        "tourism_info": ""
+    },
+    {
+        "name": "Gifu",
+        "latitude": "35.431576",
+        "longitude": "136.759968",
+        "tourism_info": ""
+    },
+    {
+        "name": "Himeji",
+        "latitude": "34.850422",
+        "longitude": "134.692761",
+        "tourism_info": ""
+    },
+    {
+        "name": "Naoshima",
+        "latitude": "34.460727",
+        "longitude": "133.974996",
+        "tourism_info": ""
+    },
+    {
+        "name": "Okayama",
+        "latitude": "34.659798",
+        "longitude": "133.919698",
+        "tourism_info": ""
+    },
+    {
+        "name": "Shirakawago",
+        "latitude": "36.260390",
+        "longitude": "136.892034",
+        "tourism_info": ""
+    },
+    {
+        "name": "Takayama",
+        "latitude": "36.147933",
+        "longitude": "137.258156",
+        "tourism_info": ""
+    },
+    {
+        "name": "Wakayama",
+        "latitude": "34.245938",
+        "longitude": "135.180474",
+        "tourism_info": ""
+    },
+    {
         "name": "Takaragawa",
         "latitude": "36.848339",
         "longitude": "139.047056",

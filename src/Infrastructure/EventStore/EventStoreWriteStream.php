@@ -27,9 +27,9 @@ final class EventStoreWriteStream implements EventStoreWriteInterface
     /**
      * @param EventDescription[]
      */
-    public function writeBatchEvent(array $events): ResponseInterface
+    public function writeBatchEvent(string $streamId, array $events): ResponseInterface
     {
-        $response = $this->httpClient->request('POST', '/streams/$stream_test', [
+        $response = $this->httpClient->request('POST', '/streams/'.$streamId, [
                 'headers' => [
                     'Content-Type' => self::CONTENT_TYPE,
                 ],
