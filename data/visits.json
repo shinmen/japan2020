@@ -106,5 +106,11 @@
         "latitude": "36.848339",
         "longitude": "139.047056",
         "tourism_info": ""
+    },
+    {
+	"name": "Kamakura",
+	"latitude": "35.353790",
+	"longitude": "139.546814",
+	"tourism_info": ""
     }
 ]
