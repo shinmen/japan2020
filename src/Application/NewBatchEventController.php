@@ -6,6 +6,7 @@ use App\Infrastructure\EventStore\EventDescriptionDataTransformer;
 use App\Infrastructure\EventStore\EventStoreWriteStream;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 final class NewBatchEventController
 {
