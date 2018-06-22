@@ -3,114 +3,168 @@
         "name": "Tokyo",
         "latitude": "35.742707",
         "longitude": "139.731073",
-        "tourism_info": ""
+        "tourism_info": "",
+        "area": "Kanto",
+        "nearby_cities": ["Nikko", "Takaragawa", "Kamakura", "Hakone Mt Fuji", "Mont Takao", "Chichibu"]
     },
     {
         "name": "Kyoto",
         "latitude": "34.986121",
         "longitude": "135.758756",
-        "tourism_info": ""
+        "tourism_info": "",
+        "area": "Kansai",
+        "nearby_cities": ["Himeji", "Nara", "Wakayama", "Osaka"]
     },
     {
         "name": "Osaka",
         "latitude": "34.676419",
         "longitude": "135.498154",
-        "tourism_info": ""
+        "tourism_info": "",
+        "area": "Kansai",
+        "nearby_cities": ["Himeji", "Nara", "Wakayama", "Kyoto"]
     },
     {
         "name": "Nara",
         "latitude": "34.686316",
         "longitude": "135.805149",
-        "tourism_info": ""
+        "tourism_info": "",
+        "area": "Kansai",
+        "nearby_cities": ["Himeji", "Kyoto", "Wakayama", "Osaka"]
     },
     {
-        "name": "Hakone",
+        "name": "Hakone Mt Fuji",
         "latitude": "35.223372",
         "longitude": "139.007751",
-        "tourism_info": ""
+        "tourism_info": "",
+        "area": "Kanto",
+        "nearby_cities": ["Nikko", "Takaragawa", "Kamakura", "Tokyo", "Mont Takao", "Chichibu"]
     },
     {
         "name": "Nagoya",
         "latitude": "35.153861",
         "longitude": "136.934372",
-        "tourism_info": ""
+        "tourism_info": "",
+        "area": "Chubu",
+        "nearby_cities": ["Takayama", "Gifu", "Shirakawago", "Kanazawa"]
     },
     {
         "name": "Hiroshima",
         "latitude": "34.393005",
         "longitude": "132.452946",
-        "tourism_info": ""
+        "tourism_info": "",
+        "area": "Chugoku",
+        "nearby_cities": ["Miyajima", "Okayama", "Naoshima"]
     },
     {
         "name": "Miyajima",
         "latitude": "34.298563",
         "longitude": "132.324315",
-        "tourism_info": ""
+        "tourism_info": "",
+        "area": "Chugoku",
+        "nearby_cities": ["Hiroshima", "Okayama", "Naoshima"]
     },
     {
         "name": "Nikko",
         "latitude": "36.723934",
         "longitude": "139.693554",
-        "tourism_info": ""
+        "tourism_info": "",
+        "area": "Kanto",
+        "nearby_cities": ["Tokyo", "Takaragawa", "Kamakura", "Hakone Mt Fuji", "Mont Takao", "Chichibu"]
     },
     {
         "name": "Kanazawa",
         "latitude": "36.567690",
         "longitude": "136.663357",
-        "tourism_info": ""
+        "tourism_info": "",
+        "area": "Chubu",
+        "nearby_cities": ["Takayama", "Gifu", "Shirakawago", "Nagoya"]
     },
     {
         "name": "Gifu",
         "latitude": "35.431576",
         "longitude": "136.759968",
-        "tourism_info": ""
+        "tourism_info": "",
+        "area": "Chubu",
+        "nearby_cities": ["Takayama", "Nagoya", "Shirakawago", "Kanazawa"]
     },
     {
         "name": "Himeji",
         "latitude": "34.850422",
         "longitude": "134.692761",
-        "tourism_info": ""
+        "tourism_info": "",
+        "area": "Kansai",
+        "nearby_cities": ["Kyoto", "Nara", "Wakayama", "Osaka"]
     },
     {
         "name": "Naoshima",
         "latitude": "34.460727",
         "longitude": "133.974996",
-        "tourism_info": ""
+        "tourism_info": "",
+        "area": "Chugoku",
+        "nearby_cities": ["Miyajima", "Hiroshima", "Okayama"]
     },
     {
         "name": "Okayama",
         "latitude": "34.659798",
         "longitude": "133.919698",
-        "tourism_info": ""
+        "tourism_info": "",
+        "area": "Chugoku",
+        "nearby_cities": ["Miyajima", "Hiroshima", "Naoshima"]
     },
     {
         "name": "Shirakawago",
         "latitude": "36.260390",
         "longitude": "136.892034",
-        "tourism_info": ""
+        "tourism_info": "",
+        "area": "Chubu",
+        "nearby_cities": ["Takayama", "Gifu", "Kanazawa", "Nagoya"]
     },
     {
         "name": "Takayama",
         "latitude": "36.147933",
         "longitude": "137.258156",
-        "tourism_info": ""
+        "tourism_info": "",
+        "area": "Chubu",
+        "nearby_cities": ["Gifu", "Kanazawa", "Shirakawago", "Nagoya"]
     },
     {
         "name": "Wakayama",
         "latitude": "34.245938",
         "longitude": "135.180474",
-        "tourism_info": ""
+        "tourism_info": "",
+        "area": "Kansai",
+        "nearby_cities": ["Himeji", "Nara", "Kyoto", "Osaka"]
     },
     {
         "name": "Takaragawa",
         "latitude": "36.848339",
         "longitude": "139.047056",
-        "tourism_info": ""
+        "tourism_info": "",
+        "area": "Kanto",
+        "nearby_cities": ["Nikko", "Kamakura", "Hakone Mt Fuji", "Mont Takao", "Chichibu", "Tokyo"]
     },
     {
-	"name": "Kamakura",
-	"latitude": "35.353790",
-	"longitude": "139.546814",
-	"tourism_info": ""
+        "name": "Kamakura",
+        "latitude": "35.353790",
+        "longitude": "139.546814",
+        "tourism_info": "",
+        "area": "Kanto",
+        "nearby_cities": ["Nikko", "Takaragawa", "Tokyo", "Hakone Mt Fuji", "Mont Takao", "Chichibu"]
+    },
+    {
+        "name": "Mont Takao",
+        "latitude": "35.626201",
+        "longitude": "139.243745",
+        "tourism_info": "",
+        "area": "Kanto",
+        "nearby_cities": ["Nikko", "Takaragawa", "Kamakura", "Hakone Mt Fuji", "Tokyo", "Chichibu"]
+    },
+    {
+        "name": "Chichibu",
+        "latitude": "35.999752",
+        "longitude": "139.086034",
+        "tourism_info": "",
+        "area": "Kanto",
+        "nearby_cities": ["Nikko", "Takaragawa", "Kamakura", "Hakone Mt Fuji", "Mont Takao", "Tokyo"]
     }
 ]
