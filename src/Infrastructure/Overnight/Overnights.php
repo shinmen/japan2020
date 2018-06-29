@@ -45,7 +45,7 @@ final class Overnights
             ]
         );
         $content = json_decode((string) $response->getBody(), true);
-        $mapper = new OvernightRequestToOvernightMapper();
+        $mapper = new OvernightRequestToOvernightMapper($city);
 
         return $mapper->buildOvernights($guests, $content);
     }
