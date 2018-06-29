@@ -8,6 +8,16 @@ use App\Infrastructure\Overnight\Overnight;
 
 final class OvernightRequestToOvernightMapper
 {
+    /**
+     * @var string
+     */
+    private $queryCity;
+
+    public function __construct(string $queryCity)
+    {
+        $this->queryCity = $queryCity;
+    }
+
     public function buildOvernights(int $guestNb, array $content): array
     {
         if (empty($content['explore_tabs'][0]['sections'][0]['listings'])) {
@@ -40,7 +50,8 @@ final class OvernightRequestToOvernightMapper
             $detail['bedrooms'],
             $detail['beds'],
             $detail['bathrooms'],
-            utf8_encode($detail['city'])
+            utf8_encode($detail['city']),
+            $this->queryCity
         );
     }
 

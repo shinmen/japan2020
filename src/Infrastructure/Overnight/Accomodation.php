@@ -39,6 +39,11 @@ final class Accomodation implements \JsonSerializable
      */
     private $city;
 
+    /**
+     * @var string
+     */
+    private $queryCity;
+
     public function __construct(
         string $commercialName,
         string $propertyType,
@@ -46,7 +51,8 @@ final class Accomodation implements \JsonSerializable
         int $bedroomsNb,
         int $bedNb,
         int $bathRoomNb,
-        string $city
+        string $city,
+        string $queryCity
     ) {
         $this->commercialName = $commercialName;
         $this->propertyType = $propertyType;
@@ -55,6 +61,7 @@ final class Accomodation implements \JsonSerializable
         $this->bedNb = $bedNb;
         $this->bathRoomNb = $bathRoomNb;
         $this->city = $city;
+        $this->queryCity = $queryCity;
     }
 
     public function jsonSerialize(): array
@@ -67,6 +74,7 @@ final class Accomodation implements \JsonSerializable
             'bedNb' => $this->bedNb,
             'bathRoomNb' => $this->bathRoomNb,
             'city' => $this->city,
+            'queryCity' => $this->queryCity,
         ]; 
     }
 
@@ -103,5 +111,10 @@ final class Accomodation implements \JsonSerializable
     public function getCity(): string
     {
         return $this->city;
+    }
+
+    public function getQueryCity(): string
+    {
+        return $this->queryCity;
     }
 }
