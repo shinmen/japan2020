@@ -7,7 +7,8 @@
             "bedroomsNb": 2,
             "bedNb": 6,
             "bathRoomNb": 1,
-            "city": "Sumida-ku"
+            "city": "Sumida-ku",
+            "queryCity": "Tokyo"
         },
         "geolocation": {
             "latitude": 35.733723909197714,
@@ -32,7 +33,8 @@
             "bedroomsNb": 2,
             "bedNb": 5,
             "bathRoomNb": 1,
-            "city": "Sumida-ku"
+            "city": "Sumida-ku",
+            "queryCity": "Tokyo"
         },
         "geolocation": {
             "latitude": 35.722295763757444,
@@ -57,7 +59,8 @@
             "bedroomsNb": 2,
             "bedNb": 4,
             "bathRoomNb": 1,
-            "city": "Shinjuku"
+            "city": "Shinjuku",
+            "queryCity": "Tokyo"
         },
         "geolocation": {
             "latitude": 35.71139885097676,
@@ -82,7 +85,8 @@
             "bedroomsNb": 1,
             "bedNb": 4,
             "bathRoomNb": 1,
-            "city": "Suginami-ku"
+            "city": "Suginami-ku",
+            "queryCity": "Tokyo"
         },
         "geolocation": {
             "latitude": 35.68315316559668,
@@ -107,7 +111,8 @@
             "bedroomsNb": 2,
             "bedNb": 7,
             "bathRoomNb": 1,
-            "city": "Shinjuku-ku"
+            "city": "Shinjuku-ku",
+            "queryCity": "Tokyo"
         },
         "geolocation": {
             "latitude": 35.69034333206684,
@@ -132,7 +137,8 @@
             "bedroomsNb": 3,
             "bedNb": 8,
             "bathRoomNb": 1,
-            "city": "Kita-ku"
+            "city": "Kita-ku",
+            "queryCity": "Tokyo"
         },
         "geolocation": {
             "latitude": 35.79107886820437,
@@ -157,7 +163,8 @@
             "bedroomsNb": 1,
             "bedNb": 7,
             "bathRoomNb": 1,
-            "city": "æ¸\u008bè°·å\u008cº"
+            "city": "æ¸\u008bè°·å\u008cº",
+            "queryCity": "Tokyo"
         },
         "geolocation": {
             "latitude": 35.686209890034405,
@@ -182,7 +189,8 @@
             "bedroomsNb": 3,
             "bedNb": 7,
             "bathRoomNb": 2,
-            "city": "Toshima-ku"
+            "city": "Toshima-ku",
+            "queryCity": "Tokyo"
         },
         "geolocation": {
             "latitude": 35.730266357470335,
@@ -207,7 +215,8 @@
             "bedroomsNb": 2,
             "bedNb": 7,
             "bathRoomNb": 1,
-            "city": "Setagaya"
+            "city": "Setagaya",
+            "queryCity": "Tokyo"
         },
         "geolocation": {
             "latitude": 35.65823066956741,
@@ -232,7 +241,8 @@
             "bedroomsNb": 1,
             "bedNb": 5,
             "bathRoomNb": 1,
-            "city": "Meguro-ku"
+            "city": "Meguro-ku",
+            "queryCity": "Tokyo"
         },
         "geolocation": {
             "latitude": 35.65489681061527,
