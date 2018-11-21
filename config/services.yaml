@@ -34,13 +34,13 @@ services:
             $producer: '@old_sound_rabbit_mq.save_flight_info_producer'
         tags: ['controller.service_arguments']
 
-    PicoFeed\Config\Config: ~
-    PicoFeed\Reader\Reader: ~
+    # PicoFeed\Config\Config: ~
+    # PicoFeed\Reader\Reader: ~
 
-    httpClient.event_store:
-        class: GuzzleHttp\Client
-        arguments:
-            - {'base_uri': '%env(EVENT_STORE_URI)%'}
+    # httpClient.event_store:
+    #     class: GuzzleHttp\Client
+    #     arguments:
+    #         - {'base_uri': '%env(EVENT_STORE_URI)%'}
 
     httpClient.flight:
         class: GuzzleHttp\Client
@@ -52,10 +52,10 @@ services:
         arguments: 
             - {'base_uri': '%env(AIRBNB_URL)%'}
 
-    MongoDB\Client:
-        arguments:
-            $uri: '%env(MONGO_URL)%'
-            $uriOptions: {'username': '%env(MONGO_USERNAME)%', 'password': '%env(MONGO_PASSWORD)%'}
+    # MongoDB\Client:
+    #     arguments:
+    #         $uri: '%env(MONGO_URL)%'
+    #         $uriOptions: {'username': '%env(MONGO_USERNAME)%', 'password': '%env(MONGO_PASSWORD)%'}
 
     App\Infrastructure\EventStore\EventStoreWriteStream:
         arguments:

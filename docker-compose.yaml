@@ -1,37 +1,56 @@
 version: "3"
 services:
-    eventstore:
-        image: "eventstore/eventstore"
-        ports: 
-            - "2113:2113"
-        volumes:
-            - "./eventstore_data/:/var/lib/eventstore"
-        environment:
-            - EVENTSTORE_RUN_PROJECTIONS=All
+    # eventstore:
+    #     image: "eventstore/eventstore"
+    #     ports: 
+    #         - "2113:2113"
+    #     volumes:
+    #         - "./eventstore_data/:/var/lib/eventstore"
+    #     environment:
+    #         - EVENTSTORE_RUN_PROJECTIONS=All
 
-    rabbitmq:
-        image: "rabbitmq:3.7.4-rc.4-management-alpine"
-        hostname: "rabbit_japan"
-        environment:
-            RABBITMQ_NODENAME: "rabbitmq_japan"
-            RABBITMQ_ERLANG_COOKIE: "SWQOKODSQALRPCLNMEQG"
-            RABBITMQ_DEFAULT_USER: "${RABBIT_USERNAME}"
-            RABBITMQ_DEFAULT_PASS: "${RABBIT_PASSWORD}"
-            RABBITMQ_DEFAULT_VHOST: "/"
-        ports:
-            - "15680:15672"
-            - "5672:5672"
-        volumes:
-            - "./rabbitmq_data/:/var/lib/rabbitmq/mnesia/"
+    # rabbitmq:
+    #     image: "rabbitmq:3.7.4-rc.4-management-alpine"
+    #     hostname: "rabbit_japan"
+    #     environment:
+    #         RABBITMQ_NODENAME: "rabbitmq_japan"
+    #         RABBITMQ_ERLANG_COOKIE: "SWQOKODSQALRPCLNMEQG"
+    #         RABBITMQ_DEFAULT_USER: "${RABBIT_USERNAME}"
+    #         RABBITMQ_DEFAULT_PASS: "${RABBIT_PASSWORD}"
+    #         RABBITMQ_DEFAULT_VHOST: "/"
+    #     ports:
+    #         - "15680:15672"
+    #         - "5672:5672"
+    #     volumes:
+    #         - "./rabbitmq_data/:/var/lib/rabbitmq/mnesia/"
 
-    mongo:
-        image: "mongo:3"
+    # mongo:
+    #     image: "mongo:3"
+    #     ports:
+    #         - "27018:27017"
+    #     environment:
+    #         - MONGO_INITDB_ROOT_USERNAME=${MONGO_ROOT_USERNAME}
+    #         - MONGO_INITDB_ROOT_PASSWORD=${MONGO_ROOT_PASSWORD}
+    #     volumes:
+    #         - "./mongo/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d"
+    #         - "/data/japan_db/:/data/japan_db/" 
+    web:
+        image: "richarvey/nginx-php-fpm:1.5.0"
         ports:
-            - "27018:27017"
-        environment:
-            - MONGO_INITDB_ROOT_USERNAME=${MONGO_ROOT_USERNAME}
-            - MONGO_INITDB_ROOT_PASSWORD=${MONGO_ROOT_PASSWORD}
+            - "8080:80"
+        working_dir: /var/www/japan2020
         volumes:
-            - "./mongo/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d"
-            - "/data/japan_db/:/data/japan_db/"   
-          
+            - .:/var/www/japan2020
+            - ./local/nginx.conf:/etc/nginx/sites-enabled/default.conf
+        depends_on: 
+            - db
+
+    db:
+        image: "mysql:8"
+        environment:
+            - MYSQL_RANDOM_ROOT_PASSWORD=yes
+            - MYSQL_USER=${DB_USERNAME}
+            - MYSQL_PASSWORD=${DB_PASSWORD}
+            - MYSQL_DATABASE=${DB_NAME}
+        volumes:
+            - "/data/japan_sql_db/:/data/japan_sql_db/"  

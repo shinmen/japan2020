@@ -38,15 +38,15 @@ class FlightRequestController
         );
         $flightRequest = new FlightRequest($goingTrip, $returnTrip);
         $flightPlans = $this->flightOffers->getFlightOffers($flightRequest);
-        $this->dispatchOffers($flightPlans);
+        //$this->dispatchOffers($flightPlans);
 
         return new JsonResponse($flightPlans);
     }
 
-    private function dispatchOffers(array $flightPlans)
-    {
-        foreach ($flightPlans as $flightPlan) {
-            $this->producer->publish(serialize($flightPlan));
-        }
-    }
+    // private function dispatchOffers(array $flightPlans)
+    // {
+    //     foreach ($flightPlans as $flightPlan) {
+    //         $this->producer->publish(serialize($flightPlan));
+    //     }
+    // }
 }

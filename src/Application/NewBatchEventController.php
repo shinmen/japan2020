@@ -2,8 +2,8 @@
 
 namespace App\Application;
 
+use App\Domain\Travel\EventStore\EventStoreWriteInterface;
 use App\Infrastructure\EventStore\EventDescriptionDataTransformer;
-use App\Infrastructure\EventStore\EventStoreWriteStream;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -13,7 +13,7 @@ final class NewBatchEventController
 
     private $transformer;
 
-    public function __construct(EventStoreWriteStream $writer, EventDescriptionDataTransformer $transformer)
+    public function __construct(EventStoreWriteInterface $writer, EventDescriptionDataTransformer $transformer)
     {
         $this->writer = $writer;
         $this->transformer = $transformer;
