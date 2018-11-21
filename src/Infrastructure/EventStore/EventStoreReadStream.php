@@ -4,6 +4,7 @@ namespace App\Infrastructure\EventStore;
 
 use App\Domain\Travel\EventDescription;
 use App\Domain\Travel\EventStore\EventStoreReadInterface;
+use App\Infrastructure\Adapter\EventDescriptionDataTransformer;
 use PicoFeed\Config\Config;
 use PicoFeed\Parser\Feed;
 use PicoFeed\PicoFeedException;

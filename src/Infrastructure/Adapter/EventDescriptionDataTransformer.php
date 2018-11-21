@@ -1,8 +1,8 @@
-<?php 
+<?php
 
-namespace App\Infrastructure\EventStore;
+namespace App\Infrastructure\Adapter;
 
-use App\Domain\Travel\EventDescription;
+use App\Domain\Travel\Model\EventDescription;
 
 final class EventDescriptionDataTransformer
 {
