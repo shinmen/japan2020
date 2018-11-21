@@ -2,13 +2,13 @@
 
 namespace App\Application;
 
-use App\Infrastructure\EventStore\EventStoreReadStream;
+use App\Domain\Travel\EventStore\EventStoreReadInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 
 final class HistoryEventController
 {
-    public function __construct(EventStoreReadStream $readerStream)
+    public function __construct(EventStoreReadInterface $readerStream)
     {
         $this->readerStream = $readerStream;
     }

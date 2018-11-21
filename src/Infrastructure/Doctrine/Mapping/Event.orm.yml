@@ -1,0 +1,22 @@
+App\Infrastructure\Entity\Event:
+    type: entity
+    table: japan_event
+    indexes:
+        stream_id_idx:
+            columns: [ stream_id ]
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+        streamId:
+            type: string
+            column: stream_id
+        eventId:
+            type: string
+            column: event_id
+        eventType:
+            type: string
+            column: event_type
+        data:
+            type: json_array

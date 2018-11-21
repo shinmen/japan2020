@@ -3,7 +3,7 @@
 namespace App\Application;
 
 use App\Domain\Travel\EventStore\EventStoreWriteInterface;
-use App\Infrastructure\EventStore\EventDescriptionDataTransformer;
+use App\Infrastructure\Adapter\EventDescriptionDataTransformer;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 

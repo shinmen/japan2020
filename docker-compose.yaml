@@ -47,10 +47,13 @@ services:
 
     db:
         image: "mysql:8"
+        restart: always
+        command: --default-authentication-plugin=mysql_native_password
         environment:
-            - MYSQL_RANDOM_ROOT_PASSWORD=yes
-            - MYSQL_USER=${DB_USERNAME}
-            - MYSQL_PASSWORD=${DB_PASSWORD}
-            - MYSQL_DATABASE=${DB_NAME}
+            #MYSQL_RANDOM_ROOT_PASSWORD: "yes"
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_USER: ${DB_USERNAME}
+            MYSQL_PASSWORD: ${DB_PASSWORD}
+            MYSQL_DATABASE: ${DB_NAME}
         volumes:
             - "/data/japan_sql_db/:/data/japan_sql_db/"  

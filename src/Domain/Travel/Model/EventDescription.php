@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Domain\Travel;
+namespace App\Domain\Travel\Model;
 
 class EventDescription implements \JsonSerializable
 {

@@ -21,7 +21,7 @@ services:
         resource: '../src/*'
         # you can exclude directories or files
         # but if a service is unused, it's removed anyway
-        exclude: '../src/{Entity,Migrations,Repository,Tests,Domain}'
+        exclude: '../src/{Entity,Migrations,Repository,Tests,Domain,Infrastructure/EventStore}'
 
     # controllers are imported separately to make sure they
     # have the tag that allows actions to type-hint services
@@ -52,22 +52,22 @@ services:
         arguments: 
             - {'base_uri': '%env(AIRBNB_URL)%'}
 
-    # MongoDB\Client:
+    MongoDB\Client:
+        arguments:
+            $uri: '%env(MONGO_URL)%'
+            $uriOptions: {'username': '%env(MONGO_USERNAME)%', 'password': '%env(MONGO_PASSWORD)%'}
+
+    # App\Infrastructure\EventStore\EventStoreWriteStream:
     #     arguments:
-    #         $uri: '%env(MONGO_URL)%'
-    #         $uriOptions: {'username': '%env(MONGO_USERNAME)%', 'password': '%env(MONGO_PASSWORD)%'}
+    #         $httpClient: '@httpClient.event_store'
+    #         $esLogin: '%env(EVENT_STORE_LOGIN)%'
+    #         $esPassword: '%env(EVENT_STORE_PASSWORD)%'
 
-    App\Infrastructure\EventStore\EventStoreWriteStream:
-        arguments:
-            $httpClient: '@httpClient.event_store'
-            $esLogin: '%env(EVENT_STORE_LOGIN)%'
-            $esPassword: '%env(EVENT_STORE_PASSWORD)%'
-
-    App\Infrastructure\EventStore\EventStoreReadStream:
-        arguments:
-            $esLogin: '%env(EVENT_STORE_LOGIN)%'
-            $esPassword: '%env(EVENT_STORE_PASSWORD)%'
-            $esUri: '%env(EVENT_STORE_URI)%'
+    # App\Infrastructure\EventStore\EventStoreReadStream:
+    #     arguments:
+    #         $esLogin: '%env(EVENT_STORE_LOGIN)%'
+    #         $esPassword: '%env(EVENT_STORE_PASSWORD)%'
+    #         $esUri: '%env(EVENT_STORE_URI)%'
 
     App\Infrastructure\Flight\FlightOffers:
         arguments:
@@ -83,5 +83,12 @@ services:
         arguments:
             $client: '@httpClient.overnight'
             $overnightApiKey: '%env(AIRBNB_KEY)%'
+
+    App\Domain\Travel\EventStore\EventStoreReadInterface: '@App\Infrastructure\SqlEventStore\EventStoreSQL'
+
+    App\Domain\Travel\EventStore\EventStoreWriteInterface: '@App\Infrastructure\SqlEventStore\EventStoreSQL'
+
+    Doctrine\Common\Persistence\ObjectRepository: '@doctrine.orm.entity_manager'
+    Doctrine\Common\Persistence\ObjectManager: '@doctrine.orm.entity_manager'
 
 
