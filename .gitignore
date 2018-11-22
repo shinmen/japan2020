@@ -2,6 +2,8 @@
 ###> symfony/framework-bundle ###
 .env
 /public/bundles/
+!var/cache/.gitkeep
+!var/.gitkeep
 /var/
 /vendor/
 ###< symfony/framework-bundle ###
