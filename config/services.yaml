@@ -83,7 +83,6 @@ services:
 
     App\Domain\Travel\EventStore\EventStoreWriteInterface: '@App\Infrastructure\SqlEventStore\EventStoreSQL'
 
-    Doctrine\Common\Persistence\ObjectRepository: '@doctrine.orm.entity_manager'
     Doctrine\Common\Persistence\ObjectManager: '@doctrine.orm.entity_manager'
 
 

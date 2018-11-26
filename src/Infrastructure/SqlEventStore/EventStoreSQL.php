@@ -6,8 +6,8 @@ use App\Domain\Travel\EventStore\EventStoreReadInterface;
 use App\Domain\Travel\EventStore\EventStoreWriteInterface;
 use App\Domain\Travel\VO\EventMetadata;
 use App\Infrastructure\Entity\Event;
+use App\Infrastructure\Repository\EventRepository;
 use Doctrine\Common\Persistence\ObjectManager;
-use Doctrine\Common\Persistence\ObjectRepository;
 use GuzzleHttp\Psr7\Response;
 use Psr\Http\Message\ResponseInterface;
 
@@ -16,7 +16,7 @@ final class EventStoreSQL implements EventStoreWriteInterface, EventStoreReadInt
     private $repo;
     private $om;
 
-    public function __construct(ObjectRepository $repo, ObjectManager $om)
+    public function __construct(EventRepository $repo, ObjectManager $om)
     {
         $this->repo = $repo;
         $this->om = $om;
@@ -47,6 +47,6 @@ final class EventStoreSQL implements EventStoreWriteInterface, EventStoreReadInt
      */
     public function getEvents(string $streamId): array
     {
-        return $this->repo->getRepository(Event::class)->findBy(['streamId' => $streamId]);
+        return $this->repo->findByStream($streamId);
     }
 }
