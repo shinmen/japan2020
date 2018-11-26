@@ -15,12 +15,12 @@ class FlightRequestController
 {
     private $flightOffers;
 
-    private $producer;
+    //private $producer;
 
-    public function __construct(FlightOffers $flightOffers, Producer $producer)
+    public function __construct(FlightOffers $flightOffers)
     {
         $this->flightOffers = $flightOffers;
-        $this->producer = $producer;
+        //$this->producer = $producer;
     }
 
     public function __invoke (Request $request) 
