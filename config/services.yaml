@@ -29,11 +29,6 @@ services:
         resource: '../src/Application'
         tags: ['controller.service_arguments']
 
-    App\Application\FlightRequestController:
-        arguments:
-            $producer: '@old_sound_rabbit_mq.save_flight_info_producer'
-        tags: ['controller.service_arguments']
-
     # PicoFeed\Config\Config: ~
     # PicoFeed\Reader\Reader: ~
 
