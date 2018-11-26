@@ -4,6 +4,7 @@ namespace App\Infrastructure\SqlEventStore;
 
 use App\Domain\Travel\EventStore\EventStoreReadInterface;
 use App\Domain\Travel\EventStore\EventStoreWriteInterface;
+use App\Domain\Travel\Model\EventDescription;
 use App\Domain\Travel\VO\EventMetadata;
 use App\Infrastructure\Entity\Event;
 use App\Infrastructure\Repository\EventRepository;
@@ -16,8 +17,10 @@ final class EventStoreSQL implements EventStoreWriteInterface, EventStoreReadInt
     private $repo;
     private $om;
 
-    public function __construct(EventRepository $repo, ObjectManager $om)
-    {
+    public function __construct(
+        EventRepository $repo,
+        ObjectManager $om    
+    ) {
         $this->repo = $repo;
         $this->om = $om;
     }
@@ -28,14 +31,11 @@ final class EventStoreSQL implements EventStoreWriteInterface, EventStoreReadInt
     public function writeBatchEvent(string $streamId, array $events): ResponseInterface
     {
         $om = $this->om;
-        $events = array_map(function(EventDescription $event) use($streamId) {
-            return new Event(new EventMetadata($streamId), $event);
-        }, $events);
 
-        array_walk($events, function($eventDescription, $key, $om) {
-            $event = new Event(new EventMetadata($streamId), $event);
+        array_walk($events, function($eventDescription, $key, $om) use($streamId) {
+            $event = new Event($eventDescription, new EventMetadata($streamId));
             $this->om->persist($event);
-        });
+        }, $om);
 
         $om->flush();
 
@@ -47,6 +47,10 @@ final class EventStoreSQL implements EventStoreWriteInterface, EventStoreReadInt
      */
     public function getEvents(string $streamId): array
     {
-        return $this->repo->findByStream($streamId);
+        $events = $this->repo->findByStream($streamId);
+
+        return array_map(function($event) {
+            return $event->toModel();
+        }, $events);
     }
 }

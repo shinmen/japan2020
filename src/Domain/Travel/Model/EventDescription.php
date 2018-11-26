@@ -36,7 +36,7 @@ class EventDescription implements \JsonSerializable
         return $this->eventType;
     }
 
-    public function getData(): string
+    public function getData(): array
     {
         return $this->data;
     }

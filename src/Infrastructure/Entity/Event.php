@@ -54,4 +54,9 @@ class Event
     {
         return $this->data;
     }
+
+    public function toModel()
+    {
+        return new EventDescription($this->eventId, $this->eventType, $this->data);
+    }
 }
