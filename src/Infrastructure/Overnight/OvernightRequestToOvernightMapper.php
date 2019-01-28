@@ -65,7 +65,7 @@ final class OvernightRequestToOvernightMapper
 
     private function computePricePerPax(array $accomodation, int $guestNb): float
     {
-        return $accomodation['pricing_quote']['price']['total']['amount'] / $guestNb;
+        return $accomodation['pricing_quote']['rate']['amount'] / $guestNb;
     }
 
     private function pickOtherThumbnails(array $accomodation): array
